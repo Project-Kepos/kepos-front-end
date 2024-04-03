@@ -1,3 +1,4 @@
+import { Header } from '@components/header'
 import { api } from '@libs/axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,7 +13,7 @@ export function SignIn() {
 
     const response = await api.get(`/users?email=${email}&password=${password}`)
 
-    if (response.data.length > 0) {
+    if (response.data.length > 0 && email && password) {
       localStorage.setItem('kepos-login', email)
       navigate('/dashboard', { replace: true })
     } else {
@@ -25,7 +26,7 @@ export function SignIn() {
   // Html daqui pra baixo
   return (
     <main>
-      <header>Login</header>
+      <Header />
       <form onSubmit={(e) => handleSignIn(e)}>
         <input type="email" id="email" />
         <input type="senha" id="senha" />

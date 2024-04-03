@@ -15,7 +15,7 @@ export function DefaultLayout() {
 
   return (
     <>
-      <Header />
+      <Header authenticated />
       <Outlet />
       <footer>Footer</footer>
     </>
