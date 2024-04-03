@@ -26,9 +26,9 @@ export const router = createBrowserRouter([
     ],
   },
 
-  // Rotas login (footer)
-  // A header vai precisar colocar manualmente no login e cadastro
-  // Já que a tela inicial é a única que não tem
+  // Rotas login
+  // A header vai precisar colocar manualmente nas telas de login e cadastro <Header />
+  // O footer já tem no layout
   {
     path: '/',
     element: <AuthLayout />,

@@ -1,3 +1,4 @@
+import { Footer } from '@components/footer'
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
@@ -13,9 +14,21 @@ export function AuthLayout() {
   }, [navigate])
 
   return (
-    <>
-      <Outlet />
-      <footer>Footer</footer>
-    </>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
+      <div
+        style={{
+          flex: 1,
+        }}
+      >
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
   )
 }

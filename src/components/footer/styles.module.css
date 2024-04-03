@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 2.5rem; 
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: var(--green-500);
+  color: var(--white);
+}
+.footer > div {
+  flex: 1.5;
+  display: grid;
+  justify-content: end;
+
+  text-align: center;
+}
+
+.developers {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+
+  text-align: center;
+}
+
+.unauthenticated {
+  background-color: var(--white);
+  color: var(--green-500);
+}

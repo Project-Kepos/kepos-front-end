@@ -1,7 +1,23 @@
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --green-100: #E1EECD; 
+  --green-300: #B3DB76;
+  --green-500: #65A603;
+  --green-600: #2B5501;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body, input, textarea, button {
+  color: var(--green-600);
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
 }
 
 img {
