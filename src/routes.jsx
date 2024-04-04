@@ -6,7 +6,7 @@ import { Greenhouse } from './pages/greenhouse'
 import { Home } from './pages/home'
 import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
-import { MyAccount } from './pages/my-account'
+import { AddGreenhouse } from './pages/add-greenhouse'
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
       },
       {
         // Dashboard Minha Conta
-        path: 'my-account',
-        element: <MyAccount />
+        path: 'add-greenhouse',
+        element: <AddGreenhouse/>
       }
     ],
   },

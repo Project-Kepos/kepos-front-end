@@ -5,7 +5,7 @@ import { MdPodcasts } from 'react-icons/md'
 import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
 
-export function MyAccount (){
+export function AddGreenhouse (){
     
 return (
 

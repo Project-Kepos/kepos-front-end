@@ -16,7 +16,7 @@ export function Header({ authenticated = false }) {
   return (
     <header className={styles.header}>
       <img src={logoHorizontal} alt="Logo da plataforma Kêpos" />
-      <Link className={styles.profile} to="/" aria-label="Perfil do usuário">
+      <Link className={styles.profile} to="/dashboard/add-greenhouse" aria-label="Perfil do usuário">
         <PiUserCircle size="4rem" />
       </Link>
     </header>
