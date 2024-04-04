@@ -1,3 +1,4 @@
+import { api } from '@libs/axios'
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AuthLayout } from './layouts/auth-layout'
@@ -22,6 +23,14 @@ export const router = createBrowserRouter([
         // Menu da estufa (Minha tela)
         path: 'greenhouse/:id',
         element: <Greenhouse />,
+        loader: async ({ params }) => {
+          const greenhouse = await api.get('/greenhouses/' + params.id)
+          const modules = await api.get('/modules?greenhouse=' + params.id)
+          return {
+            ...greenhouse,
+            modules,
+          }
+        },
       },
     ],
   },

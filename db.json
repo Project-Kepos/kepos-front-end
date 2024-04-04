@@ -35,7 +35,7 @@
       "name": "Salsa", 
       "description": "Lorem ipsum dolor sit amet consectetur.", 
       "humidity": 89,
-      "greenhouse": "a02ac1f9-a738-44f0-9436-6ff394d71780"
+      "greenhouse": 1
     }
   ]
 }
