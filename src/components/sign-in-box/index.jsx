@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 const SignInbox = () => {
   return (
     <div className={styles.box}>
-      <div className={styles.textLogin}>Fazer Login</div>
+      <div>      <div className={styles.textLogin}>Fazer Login</div>
       <div className={styles.greenBox}>
       <form onSubmit={(e) => handleSignIn(e)}>
         <input type="email" id="email" />
@@ -12,6 +12,8 @@ const SignInbox = () => {
         <button>Logar</button>
       </form>
       </div>
+      </div>
+
     </div>
   )
 }

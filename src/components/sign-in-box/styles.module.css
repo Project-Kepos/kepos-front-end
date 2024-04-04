@@ -1,16 +1,20 @@
 .box{
-    align-items: center;
   justify-content: center;
   display: flex;
+
     
 }
 .greenBox{
     background-color: var(--green-100);
-    width: 20em;
-    text-align: center;
+    width: 30em;
+    min-height: 411px;
+    border: 1px;
+    border-color: var(--green-500);
+    border-style: solid;
     
 }
 .textLogin{
+    text-align: center;
     font-size: 4rem;
     font-weight: 200;
     color: var(--green-500);
