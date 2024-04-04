@@ -1,0 +1,17 @@
+.box{
+    align-items: center;
+  justify-content: center;
+  display: flex;
+    
+}
+.greenBox{
+    background-color: var(--green-100);
+    width: 20em;
+    text-align: center;
+    
+}
+.textLogin{
+    font-size: 4rem;
+    font-weight: 200;
+    color: var(--green-500);
+}
