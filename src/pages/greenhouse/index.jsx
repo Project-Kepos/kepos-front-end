@@ -1,33 +1,51 @@
-import { PiArrowRight, PiDrop, PiPlant } from 'react-icons/pi'
+import { MdOutlineWbSunny } from 'react-icons/md'
+import { PiArrowLeft, PiDrop, PiPlant } from 'react-icons/pi'
 import { Link, useLoaderData } from 'react-router-dom'
+
+import styles from './styles.module.css'
+
+const weatherMap = {
+  sunny: 'Ensolarado',
+}
 
 export function Greenhouse() {
   const data = useLoaderData()
 
   return (
-    <main>
-      <div>
+    <main className={styles.container}>
+      <div className={styles.heading}>
         <h1>{data.name}</h1>
         <Link to="/dashboard">
-          <PiArrowRight />
+          <PiArrowLeft size={48} />
           Voltar
         </Link>
       </div>
 
-      <section>
-        <div>
+      <section className={styles.info}>
+        <div className={styles.infoCard}>
           <h2>Temperatura</h2>
-          <span>{data.temperature}°</span>
+
+          <div>
+            <strong>{data.temperature}</strong>
+            <span>c°</span>
+          </div>
         </div>
 
-        <div>
+        <div className={styles.infoCard}>
           <h2>Umidade</h2>
-          <span>{data.humidity}g/m³</span>
+
+          <div>
+            <strong> {data.humidity}</strong>
+            <span>g/m³</span>
+          </div>
         </div>
 
-        <div>
+        <div className={`${styles.infoCard} ${styles.weather}`}>
           <h2>Clima</h2>
-          <span>{data.weather}</span>
+          <div>
+            <MdOutlineWbSunny size={96} />
+            <strong>{weatherMap[data.weather]}</strong>
+          </div>
         </div>
       </section>
 

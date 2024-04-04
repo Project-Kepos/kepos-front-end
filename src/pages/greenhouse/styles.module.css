@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heading > h1 {
+  font-size: 4rem;
+  font-weight: 200;
+}
+.heading > a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  font-size: 2.5rem;
+  font-weight: 200;
+  transition: color 0.2s;
+}
+.heading > a:hover {
+  color: var(--green-300);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2.5rem;
+}
+
+.infoCard {
+  height: 20rem;
+  padding: 1rem;
+  border: 1px solid var(--green-500);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--green-600);
+}
+.infoCard h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.infoCard > div {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.infoCard > div > strong {
+  flex: 1;
+
+  font-size: 6rem;
+  font-weight: 300;
+  color: var(--green-600);
+}
+.infoCard > div > span {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.weather > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather > div > strong {
+  font-size: 4rem;
+}
