@@ -25,5 +25,11 @@
 }
 
 .boxItem{
-  margin-top:60px;
+  margin-top:4rem;
+}
+.boxItemLink{
+  margin-top:2rem;
+}
+.boxItemLink> *:first-child {
+ margin-right: 25px; 
 }
