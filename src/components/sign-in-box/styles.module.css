@@ -1,0 +1,29 @@
+.box{
+  justify-content: center;
+  display: flex;
+
+    
+}
+.intoBox{
+  text-align: center
+}
+.greenBox{
+    background-color: var(--green-100);
+    width: 30em;
+    min-height: 411px;
+    border: 1px;
+    border-color: var(--green-500);
+    border-style: solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.textLogin{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 200;
+    color: var(--green-500);
+}
+
+.boxItem{
+  margin-top:60px;
+}
