@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
           const modules = await api.get('/modules?greenhouse=' + params.id)
           return {
             ...greenhouse.data,
-            modules: modules.data,
+            modules: [...modules.data],
           }
         },
       },

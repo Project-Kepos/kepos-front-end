@@ -36,6 +36,13 @@
       "description": "Lorem ipsum dolor sit amet consectetur.", 
       "humidity": 89,
       "greenhouse": 1
+    },
+    {
+      "id": 2,
+      "name": "Manjericão", 
+      "description": "Lorem ipsum dolor sit amet consectetur.", 
+      "humidity": 89,
+      "greenhouse": 1
     }
   ]
 }

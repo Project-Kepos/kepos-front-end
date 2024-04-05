@@ -1,5 +1,7 @@
-import { MdOutlineWbSunny } from 'react-icons/md'
-import { PiArrowLeft, PiDrop, PiPlant } from 'react-icons/pi'
+import { MdArrowBack, MdAutorenew } from 'react-icons/md'
+import { PiPottedPlant } from 'react-icons/pi'
+import { TbDroplets } from 'react-icons/tb'
+import { WiDaySunnyOvercast } from 'react-icons/wi'
 import { Link, useLoaderData } from 'react-router-dom'
 
 import styles from './styles.module.css'
@@ -13,13 +15,13 @@ export function Greenhouse() {
 
   return (
     <main className={styles.container}>
-      <div className={styles.heading}>
+      <header className={styles.heading}>
         <h1>{data.name}</h1>
         <Link to="/dashboard">
-          <PiArrowLeft size={48} />
+          <MdArrowBack size={48} />
           Voltar
         </Link>
-      </div>
+      </header>
 
       <section className={styles.info}>
         <div className={styles.infoCard}>
@@ -42,28 +44,36 @@ export function Greenhouse() {
 
         <div className={`${styles.infoCard} ${styles.weather}`}>
           <h2>Clima</h2>
-          <div>
-            <MdOutlineWbSunny size={96} />
-            <strong>{weatherMap[data.weather]}</strong>
-          </div>
+          <WiDaySunnyOvercast size={128} />
+          <strong>{weatherMap[data.weather]}</strong>
         </div>
       </section>
 
       <section>
-        {data.modules.map((module) => (
-          <div key={module.id}>
-            <div>
-              <PiPlant />
-            </div>
-            <div>
-              <h3>{module.name}</h3>
-              <p>
-                <PiDrop />
-                {module.humidity}g/m³
-              </p>
-            </div>
-          </div>
-        ))}
+        <div className={styles.modulesHeading}>
+          <h2>Módulos</h2>
+          <button>
+            <MdAutorenew size={48} />
+            Atualizar
+          </button>
+        </div>
+
+        <div className={styles.modulesGrid}>
+          {data.modules.map((module) => (
+            <Link to="/" key={module.id} className={styles.moduleItem}>
+              <div className={styles.moduleItemIcon}>
+                <PiPottedPlant size={64} />
+              </div>
+              <div className={styles.moduleItemContent}>
+                <h3>{module.name}</h3>
+                <p>
+                  <TbDroplets size={48} />
+                  {module.humidity}g/m³
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   )
