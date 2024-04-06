@@ -5,23 +5,25 @@ import Button from '../button'
 import Link from '../link'
 
 
-const SignInbox = () => {
+const SignUpbox = () => {
   return (
     <div className={styles.box}>
-      <div>      <div className={styles.textLogin}>Fazer Login</div>
+      <div>      <div className={styles.textLogin}>Criar uma conta</div>
         <div className={styles.greenBox}>
           <form onSubmit={(e) => handleSignIn(e)}>
-            {/*
-            <input type="email" id="email" />
-            <input type="senha" id="senha" />
-            <button>Logar</button>
-            */}
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
                 <InputText
                   type="text"
-                  placeholder="E-mail / Usuário"
+                  placeholder="Usuário"
                 id="email"/>
+              </div>
+              <div className={styles.boxItem}>
+                <InputText
+                  type="password"
+                  placeholder="E-mail" 
+                  id="senha"
+                  />
               </div>
               <div className={styles.boxItem}>
                 <InputText
@@ -31,11 +33,17 @@ const SignInbox = () => {
                   />
               </div>
               <div className={styles.boxItem}>
-                <Button text="Entrar" />
+                <InputText
+                  type="password"
+                  placeholder="Confirmar senha" 
+                  id="Confsenha"
+                  />
+              </div>
+              <div className={styles.boxItem}>
+                <Button text="Criar Conta" />
               </div>
               <div className={styles.boxItemLink}>
-                <Link text="Esqueci minha senha" url="/"/>
-                <Link text="Não tenho uma conta" url="/sign-up"/>
+                <Link text="Já possuo uma conta" url="/sign-in"/>
               </div>
             </div>
           </form>
@@ -46,4 +54,4 @@ const SignInbox = () => {
   )
 }
 
-export default SignInbox
+export default SignUpbox
