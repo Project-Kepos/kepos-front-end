@@ -7,6 +7,7 @@ import { Home } from './pages/home'
 import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
 import { AddGreenhouse } from './pages/add-greenhouse'
+import { MyAccount } from './pages/my-account'
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -25,9 +26,15 @@ export const router = createBrowserRouter([
         element: <Greenhouse />,
       },
       {
+          // Dashboard Nova Estufa
+          path: 'add-greenhouse',
+          element: <AddGreenhouse/>
+      },
+      {
         // Dashboard Minha Conta
-        path: 'add-greenhouse',
-        element: <AddGreenhouse/>
+        path: 'my-account',
+        element: <MyAccount/>
+
       }
     ],
   },
