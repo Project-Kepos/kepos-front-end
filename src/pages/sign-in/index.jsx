@@ -1,6 +1,6 @@
 import { Header } from '@components/header'
 import { useNavigate } from 'react-router-dom'
-
+import  SignInBox from "@components/sign-in-box"
 export function SignIn() {
   const navigate = useNavigate()
 
@@ -15,11 +15,8 @@ export function SignIn() {
   return (
     <main>
       <Header />
-      <form onSubmit={(e) => handleSignIn(e)}>
-        <input type="email" id="email" />
-        <input type="senha" id="senha" />
-        <button>Logar</button>
-      </form>
+      <SignInBox/>
+     
     </main>
   )
 }

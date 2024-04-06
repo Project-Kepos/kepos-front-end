@@ -1,0 +1,8 @@
+.link{
+    text-decoration: none;
+    color: var(--green-500);
+    font-size: 0.9rem;
+}
+.link:hover{
+    color: var(--green-600);
+}
