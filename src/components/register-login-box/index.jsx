@@ -11,14 +11,15 @@ const RegisterLoginBox = () => {
                         <div className={styles.boxItem}>
                             <div className={styles.text}>Fazer login</div>
                         </div>
-                        <div className={styles.boxItem}>
-                            <Button text="Entrar" link={"/sign-in"}/>
+                        <div className={styles.boxItem2}>
+                            <Button text="Entrar com e-mail" link={"/sign-in"}/>
                         </div>
+                        <div className={styles.textLine}>OU</div>
                         <div className={styles.boxItem}>
-                            <div className={styles.text}>Fazer login</div>
+                            <div className={styles.text}>Cadastrar</div>
                         </div>
-                        <div className={styles.boxItem}>
-                            <Button text="Cadastrar"  link={"/sign-up"}/>
+                        <div className={styles.boxItem2}>
+                            <Button text="Cadastrar com e-mail"  link={"/sign-up"}/>
                         </div>
                     </div>
                 </div>
