@@ -1,0 +1,34 @@
+.box{
+    justify-content: center;
+    display: flex;
+  
+      
+  }
+  .intoBox{
+    text-align: center
+  }
+  .greenBox{
+      background-color: var(--green-100);
+      width: 30em;
+      min-height: 500px;
+      border: 1px;
+      border-color: var(--green-500);
+      border-style: solid;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .text{
+    font-size: 2.5rem;
+    color: var(--green-600);
+}
+  @media screen {
+    @media only screen and (max-width: 600px) {
+      .greenBox{
+        width: 20em;
+        
+    }
+    }
+  }
+  
+  .boxItem{
+    margin-top:3rem;
+  }
