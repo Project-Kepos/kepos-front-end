@@ -1,6 +1,6 @@
-.button{
+.button {
     width: 60%;
-    background-color: white;
+    background-color: var(--white);
     border: solid 2px;
     border-color: var(--green-500);
     padding: 0.2em;
@@ -8,13 +8,13 @@
     transition: background-color 1s;
     color: var(--green-500);
 }
-.button:hover{
+.button:hover {
     cursor: pointer;
-    background-color: rgb(211, 211, 211);
+    background-color: var(--gray-100);
     
 }
-.button:focus{
+.button:focus {
     cursor: pointer;
     outline: none;    
-    background-color: rgb(211, 211, 211);
+    background-color: var(--gray-100);
 }
