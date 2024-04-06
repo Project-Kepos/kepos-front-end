@@ -1,15 +1,11 @@
-import React from 'react'
 import { Header } from '@components/header'
-import { useNavigate } from 'react-router-dom'
 import SignUpbox from '@components/sign-up-box'
+import React from 'react'
 export function SignUp() {
-
-  
-  // Html daqui pra baixo
   return (
     <main>
       <Header />
-        <SignUpbox/>
+      <SignUpbox />
     </main>
   )
 }

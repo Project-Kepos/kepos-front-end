@@ -1,9 +1,11 @@
+import { api } from '@libs/axios'
+import { useEffect, useState } from 'react'
 import { FaRegEdit } from 'react-icons/fa'
 import { MdArrowBack, MdAutorenew, MdClose } from 'react-icons/md'
 import { PiPottedPlant } from 'react-icons/pi'
 import { TbDroplets } from 'react-icons/tb'
 import { WiDaySunnyOvercast } from 'react-icons/wi'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
@@ -12,12 +14,51 @@ const weatherMap = {
 }
 
 export function Greenhouse() {
-  const data = useLoaderData()
+  const [greenHouseData, setGreenHouseData] = useState({
+    id: 1,
+    name: 'Dendro 1',
+    code: 'ABCD-EFGH-IJKL',
+    temperature: 25,
+    humidity: 89,
+    weather: 'sunny',
+    userId: 1,
+    modules: [
+      {
+        id: 1,
+        name: 'Salsa',
+        description: 'Lorem ipsum dolor sit amet consectetur.',
+        humidity: 89,
+      },
+      {
+        id: 2,
+        name: 'Manjericão',
+        description: 'Lorem ipsum dolor sit amet consectetur.',
+        humidity: 89,
+      },
+    ],
+  })
+  const params = useParams()
+
+  useEffect(() => {
+    async function fetchGreenHouseData() {
+      try {
+        const greenhouse = await api.get('/greenhouses/' + params.id)
+        const modules = await api.get('/modules?greenhouse=' + params.id)
+        setGreenHouseData({
+          ...greenhouse.data,
+          modules: [...modules.data],
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchGreenHouseData()
+  }, [params.id])
 
   return (
     <main className={styles.container}>
       <header className={styles.heading}>
-        <h1>{data.name}</h1>
+        <h1>{greenHouseData.name}</h1>
         <Link to="/dashboard">
           <MdArrowBack size={48} />
           Voltar
@@ -29,7 +70,7 @@ export function Greenhouse() {
           <h2>Temperatura</h2>
 
           <div>
-            <strong>{data.temperature}</strong>
+            <strong>{greenHouseData.temperature}</strong>
             <span>c°</span>
           </div>
         </div>
@@ -38,7 +79,7 @@ export function Greenhouse() {
           <h2>Umidade</h2>
 
           <div>
-            <strong> {data.humidity}</strong>
+            <strong> {greenHouseData.humidity}</strong>
             <span>g/m³</span>
           </div>
         </div>
@@ -46,7 +87,7 @@ export function Greenhouse() {
         <div className={`${styles.infoCard} ${styles.weather}`}>
           <h2>Clima</h2>
           <WiDaySunnyOvercast size={128} />
-          <strong>{weatherMap[data.weather]}</strong>
+          <strong>{weatherMap[greenHouseData.weather]}</strong>
         </div>
       </section>
 
@@ -60,8 +101,8 @@ export function Greenhouse() {
         </div>
 
         <div className={styles.modulesGrid}>
-          {data.modules.map((module) => (
-            <Link to="/" key={module.id} className={styles.moduleItem}>
+          {greenHouseData.modules.map((module) => (
+            <Link to="/dashboard" key={module.id} className={styles.moduleItem}>
               <div className={styles.moduleItemIcon}>
                 <PiPottedPlant size={64} />
               </div>
@@ -75,10 +116,14 @@ export function Greenhouse() {
             </Link>
           ))}
 
-          {data.modules.length < 4 &&
-            Array.from(Array(4 - data.modules.length).keys()).map(
+          {greenHouseData.modules.length < 4 &&
+            Array.from(Array(4 - greenHouseData.modules.length).keys()).map(
               (_, index) => (
-                <Link to="/" key={index} className={styles.moduleEmptyItem}>
+                <Link
+                  to="/dashboard"
+                  key={index}
+                  className={styles.moduleEmptyItem}
+                >
                   <h3>Slot Vazio</h3>
                 </Link>
               ),

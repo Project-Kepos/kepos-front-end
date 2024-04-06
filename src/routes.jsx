@@ -1,4 +1,3 @@
-import { api } from '@libs/axios'
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AuthLayout } from './layouts/auth-layout'
@@ -8,7 +7,6 @@ import { Home } from './pages/home'
 import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
 import { SignUp } from './pages/sign-up'
-
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -25,14 +23,6 @@ export const router = createBrowserRouter([
         // Menu da estufa (Minha tela)
         path: 'greenhouse/:id',
         element: <Greenhouse />,
-        loader: async ({ params }) => {
-          const greenhouse = await api.get('/greenhouses/' + params.id)
-          const modules = await api.get('/modules?greenhouse=' + params.id)
-          return {
-            ...greenhouse.data,
-            modules: [...modules.data],
-          }
-        },
       },
     ],
   },
