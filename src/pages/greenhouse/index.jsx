@@ -1,4 +1,5 @@
-import { MdArrowBack, MdAutorenew } from 'react-icons/md'
+import { FaRegEdit } from 'react-icons/fa'
+import { MdArrowBack, MdAutorenew, MdClose } from 'react-icons/md'
 import { PiPottedPlant } from 'react-icons/pi'
 import { TbDroplets } from 'react-icons/tb'
 import { WiDaySunnyOvercast } from 'react-icons/wi'
@@ -73,6 +74,34 @@ export function Greenhouse() {
               </div>
             </Link>
           ))}
+
+          {data.modules.length < 4 &&
+            Array.from(Array(4 - data.modules.length).keys()).map(
+              (_, index) => (
+                <Link to="/" key={index} className={styles.moduleEmptyItem}>
+                  <h3>Slot Vazio</h3>
+                </Link>
+              ),
+            )}
+        </div>
+      </section>
+
+      <section className={styles.configurations}>
+        <h2>Configurações da Estufa</h2>
+
+        <div>
+          <button>
+            <FaRegEdit size={48} />
+            Alterar nome da estufa
+          </button>
+          <button>
+            <MdAutorenew size={48} />
+            Atualizar
+          </button>
+          <button>
+            <MdClose size={48} />
+            Desconectar Estufa
+          </button>
         </div>
       </section>
     </main>
