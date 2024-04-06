@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles.module.css'
 import InputText from '../inputText'
 import Button from '../button'
+import Link from '../link'
 
 const SignInbox = () => {
   return (
@@ -19,16 +20,21 @@ const SignInbox = () => {
                 <InputText
                   type="text"
                   placeholder="E-mail / Usuário"
-                  label="Name" />
+                id="email"/>
               </div>
               <div className={styles.boxItem}>
                 <InputText
                   type="password"
-                  placeholder="Senha"
-                  label="Name" />
+                  placeholder="Senha" 
+                  id="senha"
+                  />
               </div>
               <div className={styles.boxItem}>
-              <Button text="Entrar"/>
+                <Button text="Entrar" />
+              </div>
+              <div className={styles.boxItemLink}>
+                <Link text="Esqueci minha senha" url="/"/>
+                <Link text="Não tenho uma conta" url="/"/>
               </div>
             </div>
           </form>

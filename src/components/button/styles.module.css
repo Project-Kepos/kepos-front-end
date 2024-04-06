@@ -1,11 +1,12 @@
 .button{
     width: 60%;
     background-color: white;
-    border: solid 3px;
+    border: solid 2px;
     border-color: var(--green-500);
     padding: 0.2em;
     font-size: 1.4rem;
     transition: background-color 1s;
+    color: var(--green-500);
 }
 .button:hover{
     cursor: pointer;
