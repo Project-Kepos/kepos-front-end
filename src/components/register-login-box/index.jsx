@@ -16,7 +16,7 @@ const RegisterLoginBox = () => {
                         </div>
                         <div className={styles.textLine}>OU</div>
                         <div className={styles.boxItem}>
-                            <div className={styles.text}>Cadastrar</div>
+                            <div className={styles.text}>Criar uma conta</div>
                         </div>
                         <div className={styles.boxItem2}>
                             <Button text="Cadastrar com e-mail"  link={"/sign-up"}/>
