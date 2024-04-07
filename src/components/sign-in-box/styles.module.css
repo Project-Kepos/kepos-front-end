@@ -15,10 +15,41 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen {
-  @media only screen and (max-width: 600px) {
-    .greenBox{
-      width: 20em;
+  @media only screen and (max-width: 482px) {
+    .boxItem input {
+      width: 70%;
+
+    }
+
+    .greenBox {
+      width: 26.5em;
+    }
+
+    .textLogin {
+      font-size: 3rem !important;
+
+    }
   }
+
+  @media only screen and (max-width: 438px) {
+    .greenBox {
+      width: 24.5em;
+      box-shadow: none;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .greenBox {
+      width: 22.5em;
+    }
+  }
+  @media only screen and (max-width: 362px) {
+    .greenBox {
+      width: 20em;
+    }
+    .textLogin {
+      font-size: 2.5rem !important;
+
+    }
   }
 }
 .textLogin{

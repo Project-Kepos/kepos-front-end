@@ -16,7 +16,7 @@ const SignUpbox = () => {
                 <InputText type="text" placeholder="Usuário" id="email" />
               </div>
               <div className={styles.boxItem}>
-                <InputText type="password" placeholder="E-mail" id="senha" />
+                <InputText type="email" placeholder="E-mail" id="senha" />
               </div>
               <div className={styles.boxItem}>
                 <InputText type="password" placeholder="Senha" id="senha" />
