@@ -1,15 +1,15 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+
 import styles from './styles.module.css'
 
-const Button = ({ text, link }) => {
+const Button = ({ children, link }) => {
   if (link == null) {
+    return <button className={styles.button}>{children}</button>
+  } else {
     return (
-      <button className={styles.button}>{text}</button>
-    )
-  }
-  else{
-    return (
-      <a href={link}><button className={styles.button}>{text}</button></a>
+      <Link to={link}>
+        <button className={styles.button}>{children}</button>
+      </Link>
     )
   }
 }

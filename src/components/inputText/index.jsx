@@ -1,16 +1,11 @@
 import React from 'react'
+
 import styles from './styles.module.css'
 
-const InputText = ({ value, label, placeholder, type, onChange, id }) => {
+const InputText = (props) => {
   return (
     <div>
-        <input
-        type={type}
-        value={value}
-        className={styles.input}
-        placeholder={placeholder}
-        id={id}
-      />
+      <input {...props} className={styles.input} />
     </div>
   )
 }

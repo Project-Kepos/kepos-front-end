@@ -1,47 +1,48 @@
-import React from 'react'
-import styles from './styles.module.css'
-import InputText from '../inputText'
+import { useNavigate } from 'react-router-dom'
+
 import Button from '../button'
-import Link from '../link'
-
-
+import CustomLink from '../custom-link'
+import InputText from '../inputText'
+import styles from './styles.module.css'
 const SignInbox = () => {
+  const navigate = useNavigate()
+
+  async function handleSignIn(e) {
+    e.preventDefault()
+
+    localStorage.setItem('kepos-login', 'logou')
+    navigate('/dashboard', { replace: true })
+  }
+
   return (
     <div className={styles.box}>
-      <div>      <div className={styles.textLogin}>Fazer Login</div>
+      <div>
+        {' '}
+        <div className={styles.textLogin}>Fazer Login</div>
         <div className={styles.greenBox}>
           <form onSubmit={(e) => handleSignIn(e)}>
-            {/*
-            <input type="email" id="email" />
-            <input type="senha" id="senha" />
-            <button>Logar</button>
-            */}
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
                 <InputText
                   type="text"
                   placeholder="E-mail / Usuário"
-                id="email"/>
+                  id="email"
+                />
               </div>
               <div className={styles.boxItem}>
-                <InputText
-                  type="password"
-                  placeholder="Senha" 
-                  id="senha"
-                  />
+                <InputText type="password" placeholder="Senha" id="senha" />
               </div>
               <div className={styles.boxItem}>
-                <Button text="Entrar" />
+                <Button>Entrar</Button>
               </div>
               <div className={styles.boxItemLink}>
-                <Link text="Esqueci minha senha" url="/"/>
-                <Link text="Não tenho uma conta" url="/sign-up"/>
+                <CustomLink to="/">Esqueci minha senha</CustomLink>
+                <CustomLink to="/sign-up">Não tenho uma conta</CustomLink>
               </div>
             </div>
           </form>
         </div>
       </div>
-
     </div>
   )
 }
