@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
@@ -17,7 +16,6 @@ const SignInbox = () => {
   return (
     <div className={styles.box}>
       <div>
-        {' '}
         <div className={styles.textLogin}>Fazer Login</div>
         <div className={styles.greenBox}>
           <form onSubmit={(e) => handleSignIn(e)}>

@@ -1,39 +1,80 @@
-.box{
+.box {
   justify-content: center;
   display: flex;
-}
-.intoBox{
-  text-align: center
-}
-.greenBox{
-    background-color: var(--green-100);
-    width: 30em;
-    min-height: 600px;
-    border: 1px;
-    border-color: var(--green-500);
-    border-style: solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-@media screen {
-  @media only screen and (max-width: 600px) {
-    .greenBox{
-      width: 20em;
-  }
-  }
-}
-.textLogin{
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 200;
-    color: var(--green-500);
+  width: 100%;
 }
 
-.boxItem{
-  margin-top:4rem;
+.intoBox {
+  text-align: center
 }
-.boxItemLink{
-  margin-top:2rem;
+
+.greenBox {
+  text-align: center;
+  background-color: var(--green-100);
+  width: 30em;
+  min-height: 600px;
+  border: 1px;
+  border-color: var(--green-500);
+  border-style: solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.boxItemLink> *:first-child {
- margin-right: 25px; 
+
+@media screen {
+  @media only screen and (max-width: 482px) {
+    .boxItem input {
+      width: 70%;
+
+    }
+
+    .greenBox {
+      width: 26.5em;
+    }
+
+    .textLogin {
+      font-size: 3rem !important;
+
+    }
+  }
+
+  @media only screen and (max-width: 438px) {
+    .greenBox {
+      width: 24.5em;
+      box-shadow: none;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .greenBox {
+      width: 22.5em;
+    }
+  }
+  @media only screen and (max-width: 362px) {
+    .greenBox {
+      width: 20em;
+    }
+    .textLogin {
+      font-size: 2.5rem !important;
+
+    }
+  }
+}
+
+.textLogin {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--green-500);
+}
+
+.boxItem {
+  margin-top: 4rem;
+}
+
+.boxItemLink {
+  margin-top: 2rem;
+  padding-left: 7%;
+  padding-bottom: 5%;
+}
+
+.boxItemLink>*:first-child {
+  margin-right: 25px;
 }

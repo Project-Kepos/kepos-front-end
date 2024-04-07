@@ -23,12 +23,35 @@
 }
 
 @media screen {
-    @media only screen and (max-width: 600px) {
-        .greenBox {
-            width: 25em;
-        }
+    @media only screen and (max-width: 482px) {
+      .boxItem2 button {
+        width: 80%;
+        background-color: aqua;
+  
+      }
+  
+      .greenBox {
+        width: 26.5em;
+      }
     }
-}
+  
+    @media only screen and (max-width: 438px) {
+      .greenBox {
+        width: 24.5em;
+        box-shadow: none;
+      }
+    }
+    @media only screen and (max-width: 400px) {
+      .greenBox {
+        width: 22.5em;
+      }
+    }
+    @media only screen and (max-width: 362px) {
+      .greenBox {
+        width: 20em;
+      }
+    }
+  }
 
 .boxItem {
     margin-top: 3rem;
