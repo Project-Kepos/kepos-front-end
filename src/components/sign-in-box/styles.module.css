@@ -1,8 +1,6 @@
 .box{
   justify-content: center;
   display: flex;
-
-    
 }
 .intoBox{
   text-align: center
@@ -20,7 +18,6 @@
   @media only screen and (max-width: 600px) {
     .greenBox{
       width: 20em;
-      
   }
   }
 }

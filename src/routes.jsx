@@ -8,7 +8,6 @@ import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
 import { SignUp } from './pages/sign-up'
 
-
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
   {
