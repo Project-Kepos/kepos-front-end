@@ -78,3 +78,7 @@
 .boxItemLink>*:first-child {
   margin-right: 25px;
 }
+
+.warningText{
+  color: var(--red);
+}

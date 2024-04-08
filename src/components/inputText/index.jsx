@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
+
 
 import styles from './styles.module.css'
 
-const InputText = (props) => {
+const InputText = forwardRef((props, ref) => {
   return (
     <div>
-      <input {...props} className={styles.input} />
+      <input {...props} ref={ref} className={styles.input} />
     </div>
-  )
-}
+  );
+});
+
 
 export default InputText
