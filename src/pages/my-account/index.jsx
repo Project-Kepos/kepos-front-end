@@ -6,8 +6,8 @@ import data from '../../../db.json'
 
 
 export function MyAccount() {
-  
-return(
+
+    return (
 
         <div>
 
@@ -18,12 +18,12 @@ return(
                 </div>
 
                 <p className={styles.cardtext}>
-                    Nome: {data.users[0].name}    
+                    Nome: {data.users[0].name}
                 </p>
                 <p className={styles.cardtext}>
                     E-mail: {data.users[0].email}
                 </p>
-                
+
                 <p className={styles.cardtext}>
                     Senha: {data.users[0].password}
                 </p>

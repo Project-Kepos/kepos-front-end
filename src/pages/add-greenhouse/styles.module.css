@@ -1,19 +1,19 @@
-.title{
+.title {
   color: var(--green-600);
   font-weight: 200;
   font-size: 4rem;
   text-align: center;
 }
 
-.btnVoltar{
+.btnVoltar {
   color: var(--green-600);
   font-weight: 200;
   font-size: 4rem;
   text-align: center;
   text-decoration: none;
-} 
+}
 
-.btnBuscar{
+.btnBuscar {
   color: var(--green-600);
   font-weight: 200;
   font-size: 1rem;

@@ -1,9 +1,9 @@
-
-.iconcard{
-    display: inline-flex;
+.iconcard {
+  display: inline-flex;
 }
-.card{
-  
+
+.card {
+
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -11,22 +11,20 @@
 
 
 }
-.cardtext{ 
+
+.cardtext {
   color: var(--green-600);
   font-weight: 200;
-  font-size: 25px;    
-  }
+  font-size: 25px;
+}
 
-  .accountIcon {
-    float: left;
-  }
-  
-  .accountText {
-    margin-left: 1rem; 
-    align-items: center;
-    align-content: center;
-    font-size: 1rem; 
-  }
+.accountIcon {
+  float: left;
+}
 
-
-
+.accountText {
+  margin-left: 1rem;
+  align-items: center;
+  align-content: center;
+  font-size: 1rem;
+}
