@@ -1,0 +1,12 @@
+.accessibilityBox{
+    display: flex;
+    justify-content: flex-end;
+    height: 10px;
+}
+.contrast{
+    text-align: end;
+}
+.contrastText{
+    padding-right: 10px;
+   
+}
