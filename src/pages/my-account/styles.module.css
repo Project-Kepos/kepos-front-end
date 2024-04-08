@@ -11,11 +11,10 @@
 
 
 }
-.cardtext{
-    color: var(--green-600);
-    font-weight: 200;
-    font-size: 25px;
-    
+.cardtext{ 
+  color: var(--green-600);
+  font-weight: 200;
+  font-size: 25px;    
   }
 
   .accountIcon {
