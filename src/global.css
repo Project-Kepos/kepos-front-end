@@ -10,10 +10,22 @@
   --green-600: #2B5501;
 }
 
+.colorAccessibility{
+  --white: black;
+  --red: yellow;
+
+  --green-100: black; 
+  --green-300: black;
+  --green-500: yellow;
+  --green-600: yellow;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 :focus {
@@ -27,6 +39,10 @@ body, input, textarea, button {
   font-family: "Jost", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+}
+
+body{
+  background-color: var(--white);
 }
 
 h1, h2, h3, h4, h4, h6 {
