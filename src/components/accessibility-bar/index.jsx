@@ -17,6 +17,15 @@ const AccessibilityBar = () => {
       document.documentElement.classList.remove('colorAccessibility');
     }
   }, []);
+  const increaseFontSize = () => {
+    const currentFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+    document.documentElement.style.fontSize = `${currentFontSize + 2}px`; 
+  };
+
+  const decreaseFontSize = () => {
+    const currentFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+    document.documentElement.style.fontSize = `${currentFontSize - 2}px`; 
+  };
 
   const handleChangeColor = () => {
     const newColorAccessibility = !colorAccessibility;
@@ -31,6 +40,8 @@ const AccessibilityBar = () => {
 
   return (
     <div className={styles.accessibilityBox}>
+      <a className={styles.changeSizeText} onClick={decreaseFontSize}>A-</a>
+      <a className={styles.changeSizeText} onClick={increaseFontSize}>A+</a>
       <span className={styles.contrastText}>Alto contraste</span>
       <div className={styles.contrast}>
         <Toggle
