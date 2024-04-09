@@ -1,7 +1,7 @@
 import { Footer } from '@components/footer'
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-
+import AccessibilityBar from '../components/accessibility-bar'
 export function AuthLayout() {
   const navigate = useNavigate()
 
@@ -21,6 +21,7 @@ export function AuthLayout() {
         minHeight: '100vh',
       }}
     >
+      <AccessibilityBar/>
       <div
         style={{
           flex: 1,

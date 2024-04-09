@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 import { Footer } from '../components/footer'
+import AccessibilityBar from '../components/accessibility-bar'
 
 export function DefaultLayout() {
   const navigate = useNavigate()
@@ -23,6 +24,7 @@ export function DefaultLayout() {
         minHeight: '100vh',
       }}
     >
+      <AccessibilityBar/>
       <Header authenticated />
 
       <div
