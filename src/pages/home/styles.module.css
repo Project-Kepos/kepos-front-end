@@ -1,0 +1,16 @@
+.textMenu {
+    margin-left: 100px;
+}
+
+.menuContainer {
+    display: flex;
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.menuContainer>div {
+    margin-right: 28px;
+}
+.menuContainer>a {
+    margin-right: 28px;
+}
