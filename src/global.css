@@ -8,6 +8,8 @@
   --green-300: #B3DB76;
   --green-500: #65A603;
   --green-600: #2B5501;
+
+  --transition-green:#edf1e6;
 }
 
 .colorAccessibility{
@@ -19,6 +21,8 @@
   --green-500: yellow;
   --green-600: yellow;
   --gray-100: rgb(49, 44, 44);
+
+  --transition-green:rgb(49, 44, 44);
 }
 
 
@@ -34,6 +38,8 @@
   box-shadow: 0 0 0 2px var(--green-500);
   border-radius: 4px;
 }
+
+
 
 body, input, textarea, button {
   color: var(--green-600);
@@ -63,3 +69,5 @@ img {
 ul, li {
   list-style: none;
 }
+
+
