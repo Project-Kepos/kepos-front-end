@@ -8,7 +8,7 @@ export function Home() {
     <main>
       <h2 className={styles.textMenu}>Menu com as estufas</h2>
       <div className={styles.menuContainer}>
-        <Link className={styles.link} to="/dashboard/greenhouse/1"><DendroBox dendroName="Déndro 01" /></Link>
+        <DendroBox dendroName="Déndro 01" />
         <DendroBox dendroName="Déndro 02" />
         <DendroBox dendroName="Déndro 03" />
         <DendroBox dendroName="Déndro 03" />

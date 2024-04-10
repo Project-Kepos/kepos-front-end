@@ -31,8 +31,6 @@
     background-color: aqua;
 }
 
-.menuContainer > div:last-child {
-  }
   @media screen and (max-width: 1600px) {
     .menuContainer > div{
     margin-bottom: 10px;
@@ -42,14 +40,12 @@
     .menuContainer {
         margin-left: 40px; 
     }
-
-    .menuContainer > div:nth-child(3),
-    .menuContainer > div:nth-child(6),
-    .menuContainer > a:nth-child(3),
-    .menuContainer > a:nth-child(6) {
-        margin-right: 0; 
+    .textMenu{
+        margin: 0;
+        text-align: center;
     }
-    @media screen and (max-width: 690px) {
+    
+    @media screen and (max-width: 705px) {
         .menuContainer {
             margin-left: 10px; 
         }
@@ -57,13 +53,7 @@
             margin-right: 10px;
         }
     }
-    @media screen and (max-width: 630px) {
-        .menuContainer > div:nth-child(3),
-    .menuContainer > div:nth-child(6),
-    .menuContainer > a:nth-child(3),
-    .menuContainer > a:nth-child(6) {
-        margin-right: 10px; 
-    }
+    
     }
     @media screen and (max-width: 630px) {
         .menuContainer {
@@ -77,13 +67,6 @@
         .menuContainer {
             margin-left: 0px; 
         }
-        .menuContainer > div {
-            background-color: aqua; /* Altera a cor de fundo para aqua */
-        }
-        .link{
-            
-        }
-    
     }
     
-}
+
