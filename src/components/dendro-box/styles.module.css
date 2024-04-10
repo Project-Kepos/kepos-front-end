@@ -2,7 +2,8 @@
     border: 2px solid;
     border-color: var(--green-500);
     background-color: var(--green-100);
-    width: 179px;
+    min-width: 179px;
+    max-width: 179px;
     height: 179px;
     transition: background-color 0.5s;
 }

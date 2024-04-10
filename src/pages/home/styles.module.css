@@ -11,6 +11,37 @@
 .menuContainer>div {
     margin-right: 28px;
 }
-.menuContainer>a {
+.menuContainer a {
     margin-right: 28px;
 }
+.operations{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.oneOperation{
+    width: 90px;
+    text-align: center;
+    
+}
+.operations:first-child{
+    margin-right: 10px;
+    background-color: aqua;
+}
+
+.col{
+    background-color: aqua;
+    width: 15%;
+}
+.menuContainer > div:last-child {
+    width: 15,5%;
+  }
+  @media screen and (max-width: 1600px) {
+    .menuContainer{
+        background-color: aqua;
+    }
+    .col{
+        width: 30%;
+    }
+  }
