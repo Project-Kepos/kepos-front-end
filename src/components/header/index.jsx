@@ -32,9 +32,9 @@ export function Header({ authenticated = false, landing }) {
       </Link>
       <Link
         className={styles.profile}
-        to="/dashboard"
-        aria-label="Perfil do usuário"
-      >
+        to="/dashboard/my-account"
+        aria-label="Perfil do usuário">
+      
         <PiUserCircle size="4rem" />
       </Link>
     </header>
