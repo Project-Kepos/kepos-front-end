@@ -8,13 +8,13 @@ export function Home() {
     <main>
       <h2 className={styles.textMenu}>Menu com as estufas</h2>
       <div className={styles.menuContainer}>
-        <div className={styles.col}><Link to="/dashboard/greenhouse/1"><DendroBox dendroName="Déndro 01" /></Link></div>
-        <div className={styles.col}><DendroBox dendroName="Déndro 02" /></div>
-        <div className={styles.col}><DendroBox dendroName="Déndro 03" /></div>
-        <div className={styles.col}><DendroBox dendroName="Déndro 03" /></div>
-        <div className={styles.col}><DendroBox dendroName="Déndro 04" /></div>
-        <div className={styles.col}><DendroBox dendroName="Déndro 05" /></div>
-        <AddDendro/>
+        <Link className={styles.link} to="/dashboard/greenhouse/1"><DendroBox dendroName="Déndro 01" /></Link>
+        <DendroBox dendroName="Déndro 02" />
+        <DendroBox dendroName="Déndro 03" />
+        <DendroBox dendroName="Déndro 03" />
+        <DendroBox dendroName="Déndro 04" />
+        <DendroBox dendroName="Déndro 05" />
+        <AddDendro />
       </div>
       <div className={styles.operations}>
         <Link>

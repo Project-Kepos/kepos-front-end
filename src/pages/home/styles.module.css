@@ -6,6 +6,7 @@
     display: flex;
     margin-left: 100px;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .menuContainer>div {
@@ -30,18 +31,59 @@
     background-color: aqua;
 }
 
-.col{
-    background-color: aqua;
-    width: 15%;
-}
 .menuContainer > div:last-child {
-    width: 15,5%;
   }
   @media screen and (max-width: 1600px) {
-    .menuContainer{
-        background-color: aqua;
-    }
-    .col{
-        width: 30%;
+    .menuContainer > div{
+    margin-bottom: 10px;
     }
   }
+  @media screen and (max-width: 795px) {
+    .menuContainer {
+        margin-left: 40px; 
+    }
+
+    .menuContainer > div:nth-child(3),
+    .menuContainer > div:nth-child(6),
+    .menuContainer > a:nth-child(3),
+    .menuContainer > a:nth-child(6) {
+        margin-right: 0; 
+    }
+    @media screen and (max-width: 690px) {
+        .menuContainer {
+            margin-left: 10px; 
+        }
+        .menuContainer>div ,.menuContainer>a{
+            margin-right: 10px;
+        }
+    }
+    @media screen and (max-width: 630px) {
+        .menuContainer > div:nth-child(3),
+    .menuContainer > div:nth-child(6),
+    .menuContainer > a:nth-child(3),
+    .menuContainer > a:nth-child(6) {
+        margin-right: 10px; 
+    }
+    }
+    @media screen and (max-width: 630px) {
+        .menuContainer {
+            margin: 0px;
+            justify-content: center;
+        }
+    
+    }
+    
+    @media screen and (max-width: 455px) {
+        .menuContainer {
+            margin-left: 0px; 
+        }
+        .menuContainer > div {
+            background-color: aqua; /* Altera a cor de fundo para aqua */
+        }
+        .link{
+            
+        }
+    
+    }
+    
+}

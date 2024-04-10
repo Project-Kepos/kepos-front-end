@@ -3,7 +3,6 @@
     border-color: var(--green-500);
     background-color: var(--green-100);
     min-width: 179px;
-    max-width: 179px;
     height: 179px;
     transition: background-color 0.5s;
 }
@@ -21,4 +20,9 @@
   margin-right: auto;
   width: 20%;
   margin-top: 50px;
+}
+@media screen and (max-width: 455px) {
+    .dendroBox{
+        width: 100%
+    }
 }
