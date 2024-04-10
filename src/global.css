@@ -1,23 +1,64 @@
 :root {
   --white: #fff;
   --black: #000;
+  --red: red;
+  --gray-100: #d3d3d3;
 
   --green-100: #E1EECD; 
   --green-300: #B3DB76;
   --green-500: #65A603;
   --green-600: #2B5501;
+
+  --transition-green:#edf1e6;
 }
+
+.colorAccessibility{
+  --white: black;
+  --red: yellow;
+
+  --green-100: black; 
+  --green-300: black;
+  --green-500: yellow;
+  --green-600: yellow;
+  --gray-100: rgb(49, 44, 44);
+
+  --transition-green:rgb(49, 44, 44);
+}
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--green-500);
+  border-radius: 4px;
+}
+
+
 
 body, input, textarea, button {
   color: var(--green-600);
   font-family: "Jost", sans-serif;
   font-weight: 400;
+  line-height: 1.6;
+}
+
+body{
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h4, h6 {
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -28,3 +69,5 @@ img {
 ul, li {
   list-style: none;
 }
+
+

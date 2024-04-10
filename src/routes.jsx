@@ -6,6 +6,7 @@ import { Greenhouse } from './pages/greenhouse'
 import { Home } from './pages/home'
 import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
+import { SignUp } from './pages/sign-up'
 import { AddGreenhouse } from './pages/add-greenhouse'
 import { MyAccount } from './pages/my-account'
 
@@ -55,6 +56,11 @@ export const router = createBrowserRouter([
         // Login
         path: '/sign-in',
         element: <SignIn />,
+      },
+      {
+        // Cadastro
+        path: '/sign-up',
+        element: <SignUp />,
       },
     ],
   },

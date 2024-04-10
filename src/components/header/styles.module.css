@@ -3,6 +3,7 @@
   padding: 1.5rem;
   border-bottom: 2px solid;
   margin-bottom: 2.5rem;
+  height:90px;
 
   display: flex;
   align-items: center;
@@ -11,6 +12,15 @@
   color: var(--green-500);
 }
 
+.headerLanding {
+  justify-content: center;
+  display: flex;
+  padding: 3rem;
+  border-bottom: 2px solid;
+  margin-bottom: 2.5rem;
+
+}
+
 .profile {
- color: inherit;
+  color: inherit;
 }

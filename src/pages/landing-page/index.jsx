@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom'
-
+import { Header } from '../../components/header'
+import RegisterLoginBox from '../../components/register-login-box'
 export function LandingPage() {
   return (
     <main>
-      <h1>Landing page</h1>
-      <p>Faça Login</p>
-      <Link to="/sign-in">Ir para login</Link>
+      <Header landing={true} />
+      <RegisterLoginBox />
     </main>
   )
 }

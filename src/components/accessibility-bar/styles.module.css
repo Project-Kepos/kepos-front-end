@@ -1,0 +1,21 @@
+.accessibilityBox{
+    display: flex;
+    justify-content: flex-end;
+    height: 10px;
+    padding-bottom: 20px;
+}
+.contrast{
+    text-align: end;
+}
+.contrastText{
+    padding-right: 10px;
+   
+}
+.changeSizeText:hover{
+    cursor: pointer;
+}
+.changeSizeText{
+    margin-right: 10px;
+    height: 100px;
+}
+

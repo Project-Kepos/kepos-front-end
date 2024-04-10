@@ -1,0 +1,72 @@
+.textMenu {
+    margin-left: 120px;
+}
+
+.menuContainer {
+    display: flex;
+    margin-left: 100px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.menuContainer>div {
+    margin-right: 28px;
+}
+.menuContainer a {
+    margin-right: 28px;
+}
+.operations{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.oneOperation{
+    width: 90px;
+    text-align: center;
+    
+}
+.operations:first-child{
+    margin-right: 10px;
+    background-color: aqua;
+}
+
+  @media screen and (max-width: 1600px) {
+    .menuContainer > div{
+    margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 795px) {
+    .menuContainer {
+        margin-left: 40px; 
+    }
+    .textMenu{
+        margin: 0;
+        text-align: center;
+    }
+    
+    @media screen and (max-width: 705px) {
+        .menuContainer {
+            margin-left: 10px; 
+        }
+        .menuContainer>div ,.menuContainer>a{
+            margin-right: 10px;
+        }
+    }
+    
+    }
+    @media screen and (max-width: 630px) {
+        .menuContainer {
+            margin: 0px;
+            justify-content: center;
+        }
+    
+    }
+    
+    @media screen and (max-width: 455px) {
+        .menuContainer {
+            margin-left: 0px; 
+        }
+    }
+    
+
