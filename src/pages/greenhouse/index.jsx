@@ -102,7 +102,7 @@ export function Greenhouse() {
 
         <div className={styles.modulesGrid}>
           {greenHouseData.modules.map((module) => (
-            <Link to="/dashboard" key={module.id} className={styles.moduleItem}>
+            <Link to="/dashboard/slot" key={module.id} className={styles.moduleItem}>
               <div className={styles.moduleItemIcon}>
                 <PiPottedPlant size={64} />
               </div>
