@@ -9,7 +9,7 @@ const Slot = () => {
   return (
     <>
     <div className={styles.container}>
-      <Link to="/dashboard" className={styles.back}>
+      <Link to="/dashboard/greenhouse/1" className={styles.back}>
         <MdArrowBack size={48} />
         <div className={styles.backText}>Voltar</div>
       </Link>

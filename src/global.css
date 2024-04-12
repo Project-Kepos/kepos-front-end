@@ -9,6 +9,7 @@
   --green-500: #65A603;
   --green-600: #2B5501;
 
+  --placeholder-green:#2b550149;
   --transition-green:#edf1e6;
   --transition-green-300:#B3DB76;
 }
@@ -23,6 +24,7 @@
   --green-600: yellow;
   --gray-100: rgb(49, 44, 44);
 
+  --placeholder-green:rgba(255, 255, 0, 0.199);
   --transition-green:rgb(49, 44, 44);
   --transition-green-300:rgb(168, 168, 91);
 }
