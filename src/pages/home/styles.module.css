@@ -66,6 +66,8 @@
     @media screen and (max-width: 455px) {
         .menuContainer {
             margin-left: 0px; 
+            justify-content: center;
+            margin-right: 0px;
         }
     }
     
