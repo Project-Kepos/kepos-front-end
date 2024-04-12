@@ -28,7 +28,7 @@
   transition: color 0.2s;
 }
 .heading > a:hover, .modulesHeading > button:hover, .configurations > div > button:hover {
-  color: var(--green-300);
+  color: var(--transition-green-300);
 }
 @media(max-width: 480px) {
   .heading > h1 {
@@ -168,7 +168,7 @@
   transition: color 0.2s;
 }
 .moduleItem:hover, .moduleEmptyItem:hover {
-  color: var(--green-300);
+  color: var(--transition-green-300);
 }
 
 @media(max-width: 680px) {

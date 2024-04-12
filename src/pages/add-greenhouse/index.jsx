@@ -14,7 +14,7 @@ export function AddGreenhouse() {
          <p className={styles.title}>
             Adicionar estufa
          </p>
-         <Link to='/dashboard' className={styles.btnVoltar}>
+         <Link to='/dashboard/' className={styles.btnVoltar}>
             <PiArrowLeft size={48} /> Voltar
          </Link>
 

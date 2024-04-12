@@ -7,6 +7,7 @@ import { Home } from './pages/home'
 import { LandingPage } from './pages/landing-page'
 import { SignIn } from './pages/sign-in'
 import { SignUp } from './pages/sign-up'
+import  Slot  from './pages/slot'
 import { AddGreenhouse } from './pages/add-greenhouse'
 import { MyAccount } from './pages/my-account'
 
@@ -27,8 +28,14 @@ export const router = createBrowserRouter([
         element: <Greenhouse />,
       },
       {
+        // Menu busca da estufa
+        path: 'greenhouse/:id',
+        element: <Greenhouse />,
+      }
+      ,
+      {
           // Dashboard Nova Estufa
-          path: 'add-greenhouse',
+          path: 'addgreenhouse',
           element: <AddGreenhouse/>
       },
       {
@@ -36,7 +43,13 @@ export const router = createBrowserRouter([
         path: 'my-account',
         element: <MyAccount/>
 
-      }
+      },
+      {
+        // Dashboard Minha Conta
+        path: 'slot',
+        element: <Slot/>
+
+      },
     ],
   },
 

@@ -1,0 +1,78 @@
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-weight: 200;
+
+    font-size: 3em;
+}
+
+.back {
+    float: right;
+}
+
+.backText {
+    float: right;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.plant {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.firstInfos {
+    background-color: aqua;
+
+}
+
+.plantName {
+    float: left;
+}
+
+.plantHumidity {
+    float: right;
+}
+
+.plantHumidityIcon {
+    float: right;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 300;
+}
+
+.description {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    border-top: solid 1px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+@media screen and (max-width: 507px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 2.3em;
+        font-weight: 300;
+    }
+
+    .description {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .backText {
+        margin-top: 5px;
+    }
+}

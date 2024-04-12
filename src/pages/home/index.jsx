@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 export function Home() {
   return (
     <main>
-      <h2 className={styles.textMenu}>Menu com as estufas</h2>
+      <h2 className={styles.textMenu}>Estufas pareadas</h2>
       <div className={styles.menuContainer}>
         <DendroBox dendroName="Déndro 01" />
         <DendroBox dendroName="Déndro 02" />
