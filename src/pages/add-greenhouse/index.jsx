@@ -10,17 +10,24 @@ export function AddGreenhouse() {
    return (
 
 
-      <div>
-         <p className={styles.title}>
+      <div className={styles.container}>
+         <div className={styles.title}>
             Adicionar estufa
-         </p>
+         </div>
          <Link to='/dashboard/' className={styles.btnVoltar}>
-            <PiArrowLeft size={48} /> Voltar
+            <PiArrowLeft size={40} /> <div className={styles.textFormatation}>Voltar</div>
          </Link>
+         <div className={styles.centerText}><div className={styles.textFormatation}>Insira o código de</div>
+         <p>12 digitos da sua estufa</p> 
+         <input type='text' className={styles.inputCode} placeholder='ABCD-EFGH-IJKL-LMNP' />
+         </div>
 
+      <div className={styles.controlBtn}>
          <button className={styles.btnBuscar}>
-            <MdPodcasts size={48} /> Buscar
+            <MdPodcasts  size={48}className={styles.icon} /> 
+            <div className={styles.textBtn}>Buscar</div>
          </button>
+         </div>
 
       </div>
 

@@ -9,6 +9,10 @@
 .back {
     float: right;
 }
+.back:hover {
+    color: var( --transition-green-300);
+}
+
 
 .backText {
     float: right;
