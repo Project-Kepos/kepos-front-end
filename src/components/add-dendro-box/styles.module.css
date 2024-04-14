@@ -5,10 +5,14 @@
     height: 179px;
     transition: background-color 0.5s;
     margin-top: 10px;
+    padding-top: 45px;
 }
 .dendroBox:hover{
     background-color: var(--transition-green);
     cursor: pointer;
+}
+.link{
+    margin-top: 10px;
 }
 .dendroText{
     text-align: center;
@@ -16,11 +20,13 @@
 }
 .dendroIcon {
     text-align: center;
-  margin-top: 50px;
 }
 
 @media screen and (max-width: 455px) {
     .dendroBox{
+        width: 100%
+    }
+    .link{
         width: 100%
     }
 }
