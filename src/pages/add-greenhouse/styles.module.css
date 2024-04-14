@@ -1,102 +1,10 @@
-.title {
-  color: var(--green-600);
-  font-weight: 200;
-  font-size: 3em;
-  float: left;
-}
+.container {
+  max-width: 72.5rem;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 
-.btnVoltar {
-  color: var(--green-600);
-  font-weight: 200;
-  font-size: 2em;
   display: flex;
-  float: right;
-  margin-top: 15px;
-}
-
-.btnVoltar:hover,.btnBuscar:hover{
-  color: var( --transition-green-300);
-}
-
-.btnBuscar {
-  font-weight: 200;
-  font-size: rem;
-  margin-top: 200px;
-  background-color: transparent;
-  border: none;
-  color: var(--green-600);
-  font-size: 1.5em;
-  flex: right;
-}
-.icon{
-  text-align: center;
-}
-.centerText{
-  font-weight: 200;
-  text-align: center;
-  font-size: 3rem;
-  padding-top: 150px;
-}
-
-.container{
-  padding-left: 100px;
-  padding-right: 100px;
-}
-.inputCode{
-  font-size: 2rem;
-  width: 450px;
-  text-align: center;
-  border: none;
-  border-bottom: solid 2px;
-  border-color: var(--green-500);
-  background-color: transparent;
-}
-.inputCode::placeholder{
-  color: var(--placeholder-green);
-}
-.controlBtn{
-  text-align: center;
-}
-@media screen and (max-width: 900px) {
-  .container{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .btnVoltar{
-    font-size: 2em;
-    margin-top: 0px
-  }
-  .title{
-    font-size: 2em;
-  }
-  .centerText{
-    font-size: 2em;
-  }
-  .inputCode{
-    width: 350px;
-  }
-  .textFormatation{
-    margin-left: 0px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .btnVoltar{
-    font-size: 1.2em;
-  }
-  .title{
-    font-size: 1.2em;
-    margin-top: 5px;
-  }
-  .centerText{
-    font-size: 1.2em;
-  }
-  .inputCode{
-    width: 250px;
-    font-size: 1em;
-  }
-  .textFormatation{
-    margin-top:5px;
-  }
+  flex-direction: column;
+  gap: 2.5rem;
 }

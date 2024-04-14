@@ -13,7 +13,7 @@ const weatherMap = {
   sunny: 'Ensolarado',
 }
 
-export function Greenhouse() {
+const Greenhouse = () => {
   const [greenHouseData, setGreenHouseData] = useState({
     id: 1,
     name: 'Dendro 1',
@@ -102,7 +102,11 @@ export function Greenhouse() {
 
         <div className={styles.modulesGrid}>
           {greenHouseData.modules.map((module) => (
-            <Link to="/dashboard/slot" key={module.id} className={styles.moduleItem}>
+            <Link
+              to="/dashboard/slot"
+              key={module.id}
+              className={styles.moduleItem}
+            >
               <div className={styles.moduleItemIcon}>
                 <PiPottedPlant size={64} />
               </div>
@@ -152,3 +156,5 @@ export function Greenhouse() {
     </main>
   )
 }
+
+export default Greenhouse
