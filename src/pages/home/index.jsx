@@ -1,9 +1,18 @@
-import { Link } from 'react-router-dom'
-import DendroBox from '../../components/dendro-box'
-import AddDendro from '../../components/add-dendro-box'
 import { MdAutorenew, MdClose } from 'react-icons/md'
+import { Link, useNavigate } from 'react-router-dom'
+
+import AddDendro from '../../components/add-dendro-box'
+import DendroBox from '../../components/dendro-box'
 import styles from './styles.module.css'
-export function Home() {
+
+const Home = () => {
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    localStorage.clear('kepos-login')
+    navigate('/', { replace: true })
+  }
+
   return (
     <main>
       <h2 className={styles.textMenu}>Estufas pareadas</h2>
@@ -23,11 +32,13 @@ export function Home() {
             Atualizar
           </div>
         </Link>
-        <div className={styles.oneOperation}>
+        <button className={styles.oneOperation} onClick={handleLogout}>
           <MdClose size={46} />
           Desconectar
-        </div>
+        </button>
       </div>
     </main>
   )
 }
+
+export default Home

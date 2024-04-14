@@ -1,7 +1,7 @@
-import { Header } from '@components/header'
+import Header from '@components/header'
 import SignUpbox from '@components/sign-up-box'
-import React from 'react'
-export function SignUp() {
+
+const SignUp = () => {
   return (
     <main>
       <Header />

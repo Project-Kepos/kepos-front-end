@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { AuthLayout } from './layouts/auth-layout'
-import { DefaultLayout } from './layouts/default-layout'
-import { Greenhouse } from './pages/greenhouse'
-import { Home } from './pages/home'
-import { LandingPage } from './pages/landing-page'
-import { SignIn } from './pages/sign-in'
-import { SignUp } from './pages/sign-up'
-import  Slot  from './pages/slot'
-import { AddGreenhouse } from './pages/add-greenhouse'
-import { MyAccount } from './pages/my-account'
+import AuthLayout from './layouts/auth-layout'
+import DefaultLayout from './layouts/default-layout'
+import AddGreenhouse from './pages/add-greenhouse'
+import Greenhouse from './pages/greenhouse'
+import Home from './pages/home'
+import LandingPage from './pages/landing-page'
+import MyAccount from './pages/my-account'
+import SignIn from './pages/sign-in'
+import SignUp from './pages/sign-up'
+import Slot from './pages/slot'
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -31,24 +31,21 @@ export const router = createBrowserRouter([
         // Menu busca da estufa
         path: 'greenhouse/:id',
         element: <Greenhouse />,
-      }
-      ,
+      },
       {
-          // Dashboard Nova Estufa
-          path: 'addgreenhouse',
-          element: <AddGreenhouse/>
+        // Dashboard Nova Estufa
+        path: 'add-greenhouse',
+        element: <AddGreenhouse />,
       },
       {
         // Dashboard Minha Conta
         path: 'my-account',
-        element: <MyAccount/>
-
+        element: <MyAccount />,
       },
       {
         // Dashboard Minha Conta
         path: 'slot',
-        element: <Slot/>
-
+        element: <Slot />,
       },
     ],
   },

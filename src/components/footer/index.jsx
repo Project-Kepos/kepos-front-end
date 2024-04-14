@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-export function Footer({ authenticated = false }) {
+const Footer = ({ authenticated = false }) => {
   return (
     <footer
       className={`${styles.footer} ${!authenticated && styles.unauthenticated}`}
@@ -24,3 +24,5 @@ export function Footer({ authenticated = false }) {
     </footer>
   )
 }
+
+export default Footer

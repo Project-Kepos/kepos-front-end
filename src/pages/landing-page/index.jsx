@@ -1,6 +1,7 @@
-import { Header } from '../../components/header'
+import Header from '../../components/header'
 import RegisterLoginBox from '../../components/register-login-box'
-export function LandingPage() {
+
+const LandingPage = () => {
   return (
     <main>
       <Header landing={true} />
@@ -8,3 +9,5 @@ export function LandingPage() {
     </main>
   )
 }
+
+export default LandingPage
