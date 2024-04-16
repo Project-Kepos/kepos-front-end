@@ -7,14 +7,16 @@
 }
 
 .contrastText{
-    padding-right: 10px;
+    padding-right: 5px;
     float: right;
    
 }
 .contrast{
+    float: right;  
+}
+.customToogle{
     float: right;
-    
-    
+    margin-right: 35px;
 }
 .changeSizeText:hover{
     cursor: pointer;
