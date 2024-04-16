@@ -10,6 +10,7 @@ import MyAccount from './pages/my-account'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
 import Slot from './pages/slot'
+import Acessibilidade from './pages/acessibilidade'
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -46,7 +47,13 @@ export const router = createBrowserRouter([
         // Dashboard Minha Conta
         path: 'slot',
         element: <Slot />,
+      }, 
+      {
+        // Acessibilidade
+        path: 'acessibilidade',
+        element: <Acessibilidade />,
       },
+      
     ],
   },
 
@@ -72,6 +79,7 @@ export const router = createBrowserRouter([
         path: '/sign-up',
         element: <SignUp />,
       },
+      
     ],
   },
 ])
