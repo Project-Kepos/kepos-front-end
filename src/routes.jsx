@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
         element: <MyAccount />,
       },
       {
-        // Dashboard Minha Conta
+        // Dashboard do slot
         path: 'slot',
         element: <Slot />,
       }, 
@@ -78,6 +78,11 @@ export const router = createBrowserRouter([
         // Cadastro
         path: '/sign-up',
         element: <SignUp />,
+      },
+      {
+        // Acessibilidade
+        path: 'acessibilidade',
+        element: <Acessibilidade />,
       },
       
     ],
