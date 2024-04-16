@@ -1,35 +1,48 @@
-import { Header } from '@components/header'
-import { Footer } from '@components/footer'
-import { PiArrowLeft } from 'react-icons/pi'
-import { MdPodcasts } from 'react-icons/md'
+import { useState } from 'react'
+
+import GreenhouseFound from './components/greenhouse-found'
+import GreenhouseNotFound from './components/greenhouse-not-found'
+import NewGreenhouse from './components/new-greenhouse'
+import SearchingGreenhouse from './components/searching-greenhouse'
 import styles from './styles.module.css'
-import { Link } from 'react-router-dom'
 
-export function AddGreenhouse() {
+const AddGreenhouse = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [greenhouseWasFound, setGreenhouseWasFound] = useState(null)
+  const [errorWhileSearching, setErrorWhileSearching] = useState(null)
 
-   return (
+  function handleSearchGreenhouse(e) {
+    e.preventDefault()
 
+    setIsSubmitting(true)
 
-      <div className={styles.container}>
-         <div className={styles.title}>
-            Adicionar estufa
-         </div>
-         <Link to='/dashboard/' className={styles.btnVoltar}>
-            <PiArrowLeft size={40} /> <div className={styles.textFormatation}>Voltar</div>
-         </Link>
-         <div className={styles.centerText}><div className={styles.textFormatation}>Insira o código de</div>
-         <p>12 digitos da sua estufa</p> 
-         <input type='text' className={styles.inputCode} placeholder='ABCD-EFGH-IJKL-LMNP' />
-         </div>
+    new Promise((resolve, reject) => {
+      const random = Math.round(Math.random() * 10) % 2 === 0
+      setTimeout(random ? resolve : reject, 2000)
+    })
+      .then(() => {
+        setIsSubmitting(false)
+        setGreenhouseWasFound(true)
+      })
+      .catch(() => {
+        setIsSubmitting(false)
+        setErrorWhileSearching(true)
+      })
+  }
 
-      <div className={styles.controlBtn}>
-         <button className={styles.btnBuscar}>
-            <MdPodcasts  size={48}className={styles.icon} /> 
-            <div className={styles.textBtn}>Buscar</div>
-         </button>
-         </div>
-
-      </div>
-
-   )
+  return (
+    <div className={styles.container}>
+      {isSubmitting ? (
+        <SearchingGreenhouse />
+      ) : greenhouseWasFound ? (
+        <GreenhouseFound />
+      ) : errorWhileSearching ? (
+        <GreenhouseNotFound />
+      ) : (
+        <NewGreenhouse onSearchGreenhouse={handleSearchGreenhouse} />
+      )}
+    </div>
+  )
 }
+
+export default AddGreenhouse

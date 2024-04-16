@@ -1,11 +1,11 @@
-import { Header } from '@components/header'
+import Header from '@components/header'
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
-import { Footer } from '../components/footer'
 import AccessibilityBar from '../components/accessibility-bar'
+import Footer from '../components/footer'
 
-export function DefaultLayout() {
+const DefaultLayout = () => {
   const navigate = useNavigate()
 
   // Redirecionando para o início se não estiver logado e tentar acessar
@@ -24,7 +24,7 @@ export function DefaultLayout() {
         minHeight: '100vh',
       }}
     >
-      <AccessibilityBar/>
+      <AccessibilityBar />
       <Header authenticated />
 
       <div
@@ -38,3 +38,5 @@ export function DefaultLayout() {
     </div>
   )
 }
+
+export default DefaultLayout

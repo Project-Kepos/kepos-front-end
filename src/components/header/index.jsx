@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
-export function Header({ authenticated = false, landing }) {
+const Header = ({ authenticated = false, landing }) => {
   if (!authenticated && !landing) {
     return (
       <header className={styles.header} style={{ borderBottom: 0 }}>
@@ -33,10 +33,12 @@ export function Header({ authenticated = false, landing }) {
       <Link
         className={styles.profile}
         to="/dashboard/my-account"
-        aria-label="Perfil do usuário">
-      
+        aria-label="Perfil do usuário"
+      >
         <PiUserCircle size="4rem" />
       </Link>
     </header>
   )
 }
+
+export default Header

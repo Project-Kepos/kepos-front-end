@@ -24,11 +24,15 @@
 .oneOperation{
     width: 90px;
     text-align: center;
-    
 }
 .operations:first-child{
     margin-right: 10px;
     background-color: aqua;
+}
+button.oneOperation {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
   @media screen and (max-width: 1600px) {

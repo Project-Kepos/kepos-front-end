@@ -1,8 +1,10 @@
-import { Footer } from '@components/footer'
+import Footer from '@components/footer'
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+
 import AccessibilityBar from '../components/accessibility-bar'
-export function AuthLayout() {
+
+const AuthLayout = () => {
   const navigate = useNavigate()
 
   // Redirecionando para o dashboard se estiver logado e tentar acessar
@@ -21,7 +23,7 @@ export function AuthLayout() {
         minHeight: '100vh',
       }}
     >
-      <AccessibilityBar/>
+      <AccessibilityBar />
       <div
         style={{
           flex: 1,
@@ -33,3 +35,5 @@ export function AuthLayout() {
     </div>
   )
 }
+
+export default AuthLayout
