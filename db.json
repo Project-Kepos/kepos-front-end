@@ -1,46 +1,44 @@
 {
   "users": [
-    { 
-      "id": 1, 
-      "name": "Fulano",
-      "email": "fulano@gmail.com", 
-      "password": "12345678"
+    {
+      "name": "Fulano cinco",
+      "email": "fulano@gmail.com",
+      "password": "12345678",
+      "id": "1"
     }
   ],
-
   "greenhouses": [
-    { 
-      "id": 1, 
-      "name": "Dendro 1", 
-      "code": "ABCD-EFGH-IJKL", 
+    {
+      "id": "1",
+      "name": "Dendro 1",
+      "code": "ABCD-EFGH-IJKL",
       "temperature": 25,
       "humidity": 89,
       "weather": "sunny",
       "userId": 1
-     },
-     { 
-      "id": 2, 
-      "name": "Dendro 2", 
-      "code": "MNOP-QRST-UVWX", 
+    },
+    {
+      "id": "2",
+      "name": "Dendro 2",
+      "code": "MNOP-QRST-UVWX",
       "temperature": 25,
       "humidity": 89,
       "weather": "sunny",
       "userId": 1
-     }
+    }
   ],
-
   "modules": [
     {
-      "id": 1,
-      "name": "Salsa", 
-      "description": "Lorem ipsum dolor sit amet consectetur.", 
+      "id": "1",
+      "name": "Salsa",
+      "description": "Lorem ipsum dolor sit amet consectetur.",
       "humidity": 89,
       "greenhouse": 1
     },
     {
-      "id": 2,
-      "name": "Manjericão", 
-      "description": "Lorem ipsum dolor sit amet consectetur.", 
+      "id": "2",
+      "name": "Manjericão",
+      "description": "Lorem ipsum dolor sit amet consectetur.",
       "humidity": 89,
       "greenhouse": 1
     }
