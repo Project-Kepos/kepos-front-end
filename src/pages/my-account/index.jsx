@@ -23,10 +23,22 @@ const MyAccount = () => {
           setPassword(response.data[0].password)
         }
         catch (e) {
+          const dados=  {
+            name: "Fulano cinco",
+            email: "fulano@gmail.com",
+            password: "12345678",
+            id: "1"
+          }
+          setUserData(dados)
+          setUsername(dados.name)
+          setEmail(dados.email)
+          setPassword(dados.password)
           console.log(e)
         }
       }
-      fetchData()
+      fetchData(
+
+      )
     }, [])
 
     if (userData == null) {
