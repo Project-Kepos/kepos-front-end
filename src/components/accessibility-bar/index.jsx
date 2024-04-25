@@ -46,6 +46,7 @@ const AccessibilityBar = () => {
 
   return (
     <div className={styles.accessibilityBox}>
+      
       <Link className={styles.sobreacessibilidade} to="acessibilidade">
         Sobre acessibilidade
       </Link>
@@ -53,10 +54,12 @@ const AccessibilityBar = () => {
       <div className={styles.contrast}>
         
       <Toggle
-          className={styles.customToogle}
+          icons={false}
+          className={`toogle ${styles.customToogle}`}
           checked={colorAccessibility}
           onChange={handleChangeColor}
         />
+       
         <div className={styles.contrastText}>Alto contraste</div>
        
         <a className={styles.changeSizeText} onClick={decreaseFontSize}>
