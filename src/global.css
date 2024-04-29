@@ -20,13 +20,29 @@
 
   --green-100: black; 
   --green-300: black;
-  --green-500: yellow;
-  --green-600: yellow;
+  --green-500: white;
+  --green-600: white;
   --gray-100: rgb(49, 44, 44);
 
   --placeholder-green:rgba(255, 255, 0, 0.199);
   --transition-green:rgb(49, 44, 44);
   --transition-green-300:rgb(168, 168, 91);
+}
+.colorAccessibility button{
+  color: yellow;
+}
+
+.colorAccessibility .toogle.react-toggle--checked .react-toggle-track {
+  background-color: yellow;
+}
+.colorAccessibility .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color:yellow;
+}
+.colorAccessibility .react-toggle--checked .react-toggle-track-check{
+  color: #000;
+}
+.colorAccessibility a{
+  color: yellow;
 }
 
 
@@ -73,5 +89,6 @@ img {
 ul, li {
   list-style: none;
 }
+
 
 
