@@ -60,7 +60,10 @@
 }
 @media(max-width: 680px) {
   .info {
-    grid-template-columns: 1fr;
+    display: block;
+  }
+  .info div + div {
+    margin-top: 2.5rem;
   }
 }
 
