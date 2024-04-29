@@ -29,6 +29,9 @@
   .buttons{
     display: flex;
   }
+  .buttons a{
+   height: 90px;
+  }
 
     @media(max-width: 480px) {
         .heading > button {
