@@ -27,7 +27,6 @@
 }
 .operations:first-child{
     margin-right: 10px;
-    background-color: aqua;
 }
 button.oneOperation {
     background-color: transparent;

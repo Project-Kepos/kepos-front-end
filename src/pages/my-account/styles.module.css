@@ -3,30 +3,27 @@
 }
 
 .card {
-
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-
-
-
+  width: 100%;
+  font-size: 1.6rem;
 }
 
 .cardtext {
   color: var(--green-600);
   font-weight: 200;
-  font-size: 25px;
+  font-size: 1.5rem;
 }
-
+.container{
+  margin-left: 15%;
+  margin-right: 15%;
+}
 .accountIcon {
   float: left;
 }
 
 .accountText {
-  margin-left: 1rem;
   align-items: center;
   align-content: center;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .button{
@@ -34,4 +31,40 @@
   margin-right: auto;
   border: none;
   background: none;
+}
+input{
+  font-size: 1.6rem;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.btnVoltar {
+  color: var(--green-600);
+  font-weight: 200;
+  display: flex;
+  float: right;
+  margin-top: 13px;
+}
+.operations{
+  flex-wrap: wrap;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.oneOperation{
+  height: 90px;
+  margin-right: 20px;
+  width: 60px;
+  text-align: center;
+}
+.center{
+  text-align: center;
+}
+@media screen and (max-width: 450px) {
+  .container{
+    margin-left: 3%;
+  margin-right: 3%;
+  }
 }
