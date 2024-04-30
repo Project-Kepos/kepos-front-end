@@ -34,4 +34,13 @@ font-weight: 200;
       width: 2rem;
       height: 2rem;
     }
+    .check_circle{
+      height: 180px;
+      width: 180px;
+      }
+      .foundicon{
+        height: 180px;
+        width: 180px;
+        }
+  
   }
