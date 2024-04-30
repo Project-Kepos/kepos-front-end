@@ -5,6 +5,7 @@ margin: 0 auto;
 align-items: center;
 text-align: center;
 font-weight: 200;
+margin-bottom: 100px;
 }
 .check_circle{
     height: 360px;

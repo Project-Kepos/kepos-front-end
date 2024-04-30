@@ -8,7 +8,14 @@
 .elementocontainer {
     padding-top: 50px;
 }
-
+.back {
+    float: right;
+}
+.backText {
+    float: right;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
 p {
     margin-top: 10px;
 }
