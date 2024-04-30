@@ -1,13 +1,21 @@
 import { MdAccountCircle } from 'react-icons/md'
-
+import { PiArrowLeft } from 'react-icons/pi'
+import { Link, useNavigate } from 'react-router-dom'
 import data from '../../../db.json'
 import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
 import { api } from '@libs/axios'
 import { MdCheck } from "react-icons/md";
-
+import { MdDone } from "react-icons/md";
+import { FaUserTimes } from "react-icons/fa";
 
 const MyAccount = () => {
+  const navigate = useNavigate()
+  function handleLogout() {
+    localStorage.clear('kepos-login')
+    navigate('/', { replace: true })
+  }
+
   const [userData, setUserData] = useState(null)
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
@@ -42,7 +50,7 @@ const MyAccount = () => {
     }, [])
 
     if (userData == null) {
-      return <p>Carregando</p>
+      return <p className={styles.center}>Carregando</p>
     }
 
     async function handleChangeData(e) {
@@ -62,43 +70,54 @@ const MyAccount = () => {
     }
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.card}>
+      
         <div className={styles.iconcard}>
           <MdAccountCircle size="4rem" className={styles.accountIcon} />
           <h1 className={styles.accountText}>Minha Conta</h1>
         </div>
-
+        <Link to="/dashboard/" className={styles.btnVoltar}>
+        <PiArrowLeft size={40} />{' '}
+        <div className={styles.textFormatation}>Voltar</div>
+      </Link>
         {/* <p className={styles.cardtext}>Nome atual: {userData.name}</p> */}
         <form onSubmit={(e) => handleChangeData(e)}>
           <div>
-          <label htmlFor="username">Novo Nome:</label>
+          <label htmlFor="username">Nome</label>
           <br />
           <input type="text" id="username" value={username} onChange={(e) => { setUsername(e.target.value) }} />
           </div>
         {/* <p className={styles.cardtext}>E-mail atual: {userData.email}</p> */}
         <div>
-          <label htmlFor="email">Novo E-mail:</label>
+          <label htmlFor="email">E-mail</label>
           <br />
           <input type="email" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
         </div>
         {/* <p className={styles.cardtext}>Senha: {data.users[0].password}</p> */}
         <div>
-          <label htmlFor="password">Nova Senha:</label>
+          <label htmlFor="password">Senha</label>
           <br />
           <input type="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-        
-
-
-
         </div>  
         <div className={styles.button}>
-      <button >
-         <MdCheck /> 
-          </button>
           </div>
         </form>
 
+      </div>
+      <div className={styles.operations}>
+        <Link>
+          <div className={styles.oneOperation} onClick={handleLogout}>
+            <FaUserTimes size={46} />
+            Sair
+          </div>
+        </Link>
+        <Link  >
+        <div className={styles.oneOperation}  >
+          <MdDone size={46} />
+          Salvar
+        </div>
+        </Link>
       </div>
     </div>
   )
