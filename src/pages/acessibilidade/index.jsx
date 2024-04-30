@@ -7,7 +7,7 @@ const Acessibilidade = () => {
         <><Header landing={true} />
 
             <div className={styles.container}>
-            <Link to="/dashboard/greenhouse/1" className={styles.back}>
+            <Link to="/" className={styles.back}>
                     <MdArrowBack size={48} />
                     <div className={styles.backText}>Voltar</div>
                 </Link>
