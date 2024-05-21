@@ -32,12 +32,14 @@
   border: none;
   background: none;
 }
-input{
-  font-size: 1.6rem;
-  border: none;
-  background-color: transparent;
-  margin-bottom: 10px;
-  font-weight: 200;
+
+/* Alteração dos campos de input para identificação visual deles */
+input {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 200;
+    border: hidden;
+    border-bottom: solid;
 }
 .btnVoltar {
   color: var(--green-600);
