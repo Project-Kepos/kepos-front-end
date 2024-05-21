@@ -1,15 +1,32 @@
 import { useRef, useState } from 'react'
-
+import axios from 'axios';
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
 import styles from './styles.module.css'
 
 const SignUpbox = () => {
+  const [nome,setNome] = useState("")
+  const [email,setEmail] = useState("")
   const [password, setPassword] = useState('')
   const [confPassword, setConfPassword] = useState('')
   const [warning, setWarnig] = useState(false)
   const senhaRef = useRef(null)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    alert()
+    try {
+      const response = await axios.post('http://localhost:8080/api/v1/usuario', {
+        nome: nome,
+        email: email,
+        senha: password
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   const handleComparassion = () => {
     if (password !== confPassword) {
@@ -26,13 +43,13 @@ const SignUpbox = () => {
       <div>
         <div className={styles.textLogin}>Criar uma conta</div>
         <div className={styles.greenBox}>
-          <form onSubmit={() => {}}>
+          <form onSubmit={handleSubmit}>
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
-                <InputText type="text" placeholder="Usuário" id="user" />
+                <InputText type="text" placeholder="Usuário" id="user" value={nome} onChange={(e) => setNome(e.target.value)} />
               </div>
               <div className={styles.boxItem}>
-                <InputText type="email" placeholder="E-mail" id="email" />
+                <InputText type="email" placeholder="E-mail" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className={styles.boxItem}>
                 <InputText
@@ -63,7 +80,7 @@ const SignUpbox = () => {
                 {warning ? 'Senhas não coincidem' : ''}
               </div>
               <div className={styles.boxItem}>
-                <Button>Criar Conta</Button>
+                <Button type="submit">Criar Conta</Button>
               </div>
               <div className={styles.boxItemLink}>
                 <CustomLink to="/sign-in">Já possuo uma conta</CustomLink>
