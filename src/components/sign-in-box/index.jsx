@@ -4,15 +4,27 @@ import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
 import styles from './styles.module.css'
+import {api} from '@libs/axios.js'
 
 const SignInbox = () => {
   const navigate = useNavigate()
 
   async function handleSignIn(e) {
     e.preventDefault()
-
-    localStorage.setItem('kepos-login', 'logou')
+    
+    try {
+      const response = await api.post('/usuario/login', {
+        email: email,
+        snenha: password
+        
+      });
+      localStorage.setItem('kepos-login', response.data.token)
     navigate('/dashboard', { replace: true })
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+    
   }
 
   return (

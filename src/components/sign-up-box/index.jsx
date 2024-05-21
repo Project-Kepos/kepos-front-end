@@ -4,6 +4,7 @@ import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
 import styles from './styles.module.css'
+import {api} from '@libs/axios.js'
 
 const SignUpbox = () => {
   const [nome,setNome] = useState("")
@@ -16,7 +17,7 @@ const SignUpbox = () => {
     e.preventDefault();
     alert()
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/usuario', {
+      const response = await api.post('/usuario', {
         nome: nome,
         email: email,
         senha: password
