@@ -13,6 +13,21 @@ const SignUpbox = () => {
   const [confPassword, setConfPassword] = useState('')
   const [warning, setWarnig] = useState(false)
   const senhaRef = useRef(null)
+
+  async function login(){
+    try {
+      const response = await api.post('/usuario/login', {
+        email: email,
+        senha: password
+        
+      });
+      localStorage.setItem('kepos-login', response.data.token)
+    navigate('/dashboard', { replace: true })
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     alert()
@@ -23,6 +38,7 @@ const SignUpbox = () => {
         senha: password
       });
       console.log(response.data);
+      login()
     } catch (error) {
       console.error(error);
     }
