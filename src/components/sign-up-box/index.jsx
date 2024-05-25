@@ -1,9 +1,14 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
 import styles from './styles.module.css'
+
+import { ToastContainer, toast } from 'react-toastify';i
+import 'react-toastify/dist/ReactToastify.css';
+
 import {api} from '@libs/axios.js'
 
 const SignUpbox = () => {
@@ -13,6 +18,7 @@ const SignUpbox = () => {
   const [confPassword, setConfPassword] = useState('')
   const [warning, setWarnig] = useState(false)
   const senhaRef = useRef(null)
+  const navigate = useNavigate();
 
   async function login(){
     try {
@@ -30,7 +36,6 @@ const SignUpbox = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert()
     try {
       const response = await api.post('/usuario', {
         nome: nome,
@@ -41,6 +46,7 @@ const SignUpbox = () => {
       login()
     } catch (error) {
       console.error(error);
+      toast(error)
     }
   };
 
