@@ -1,24 +1,26 @@
-.box{
+/* styles.module.css ou customToastStyles.css */
+
+.box {
   justify-content: center;
   display: flex;
 }
-.intoBox{
-  text-align: center
+
+.intoBox {
+  text-align: center;
 }
-.greenBox{
-    background-color: var(--green-100);
-    width: 30em;
-    min-height: 411px;
-    border: 1px;
-    border-color: var(--green-500);
-    border-style: solid;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+.greenBox {
+  background-color: var(--green-100);
+  width: 30em;
+  min-height: 411px;
+  border: 1px solid var(--green-500);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 @media screen {
   @media only screen and (max-width: 482px) {
     .boxItem input {
       width: 70%;
-
     }
 
     .greenBox {
@@ -27,7 +29,6 @@
 
     .textLogin {
       font-size: 3rem !important;
-
     }
   }
 
@@ -48,23 +49,25 @@
     }
     .textLogin {
       font-size: 2.5rem !important;
-
     }
   }
 }
-.textLogin{
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 200;
-    color: var(--green-500);
+
+.textLogin {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--green-500);
 }
 
-.boxItem{
-  margin-top:4rem;
+.boxItem {
+  margin-top: 4rem;
 }
-.boxItemLink{
-  margin-top:2rem;
+
+.boxItemLink {
+  margin-top: 2rem;
 }
-.boxItemLink> *:first-child {
- margin-right: 25px; 
+
+.boxItemLink > *:first-child {
+  margin-right: 25px;
 }

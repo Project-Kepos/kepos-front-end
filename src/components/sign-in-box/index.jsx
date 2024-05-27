@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../button';
 import CustomLink from '../custom-link';
 import InputText from '../inputText';
 import styles from './styles.module.css';
 import { api } from '@libs/axios.js';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Importa o CSS padrão do react-toastify
 
 const SignInbox = () => {
   const navigate = useNavigate();
@@ -23,7 +26,11 @@ const SignInbox = () => {
       navigate('/dashboard', { replace: true });
       console.log(response.data);
     } catch (error) {
-      console.error(error);
+      if (error.code === "ERR_NETWORK") {
+        toast.error("Tente novamente mais tarde");
+      } else {
+        toast.error("Email ou senha inválidos. Por favor, tente novamente");
+      }
     }
   }
 
@@ -36,20 +43,22 @@ const SignInbox = () => {
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
                 <InputText
+                required
                   type="text"
                   placeholder="E-mail / Usuário"
                   id="email"
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className={styles.boxItem}>
                 <InputText
+                required
                   type="password"
                   placeholder="Senha"
                   id="password"
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)} 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className={styles.boxItem}>
@@ -63,6 +72,18 @@ const SignInbox = () => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
