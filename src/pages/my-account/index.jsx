@@ -8,11 +8,13 @@ import { api } from '@libs/axios'
 import { MdCheck } from "react-icons/md";
 import { MdDone } from "react-icons/md";
 import { FaUserTimes } from "react-icons/fa";
+import { authContext } from "@contexts/AuthContext.jsx";
 
 const MyAccount = () => {
+  const { logout } = useContext(authContext)
   const navigate = useNavigate()
   function handleLogout() {
-    localStorage.clear('kepos-login')
+    logout()
     navigate('/', { replace: true })
   }
 

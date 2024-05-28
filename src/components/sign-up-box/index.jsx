@@ -1,9 +1,15 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
 import styles from './styles.module.css'
+import { authContext } from "@contexts/AuthContext.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import {api} from '@libs/axios.js'
 
 const SignUpbox = () => {
   const [nome,setNome] = useState("")
@@ -12,18 +18,39 @@ const SignUpbox = () => {
   const [confPassword, setConfPassword] = useState('')
   const [warning, setWarnig] = useState(false)
   const senhaRef = useRef(null)
+  const navigate = useNavigate();
+
+  async function login(){
+    try {
+      const response = await api.post('/usuario/login', {
+        email: email,
+        senha: password
+        
+      });
+    saveToken(response.data.token)
+    navigate('/dashboard', { replace: true })
+      console.log(response.data);
+    } catch (error) {
+    }
+    console.error(error);
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert()
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/usuario', {
+      const response = await api.post('/usuario', {
         nome: nome,
         email: email,
         senha: password
       });
       console.log(response.data);
+      login()
     } catch (error) {
       console.error(error);
+      if (error.code === "ERR_NETWORK") {
+        toast.error("Tente novamente mais tarde");
+      } else {
+        toast.error(error.response.data);
+      }
     }
   };
 
@@ -46,13 +73,14 @@ const SignUpbox = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
-                <InputText type="text" placeholder="Usuário" id="user" value={nome} onChange={(e) => setNome(e.target.value)} />
+                <InputText required type="text" placeholder="Usuário" id="user" value={nome} onChange={(e) => setNome(e.target.value)} />
               </div>
               <div className={styles.boxItem}>
-                <InputText type="email" placeholder="E-mail" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <InputText required type="email" placeholder="E-mail" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className={styles.boxItem}>
                 <InputText
+                required
                   type="password"
                   ref={senhaRef}
                   placeholder="Senha"
@@ -66,6 +94,7 @@ const SignUpbox = () => {
               </div>
               <div className={styles.boxItem}>
                 <InputText
+                required
                   type="password"
                   placeholder="Confirmar senha"
                   id="Confsenha"
@@ -89,6 +118,18 @@ const SignUpbox = () => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   )
 }

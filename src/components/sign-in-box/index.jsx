@@ -1,18 +1,37 @@
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../button';
+import CustomLink from '../custom-link';
+import InputText from '../inputText';
+import styles from './styles.module.css';
+import { api } from '@libs/axios.js';
 
-import Button from '../button'
-import CustomLink from '../custom-link'
-import InputText from '../inputText'
-import styles from './styles.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Importa o CSS padrão do react-toastify
 
 const SignInbox = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   async function handleSignIn(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    localStorage.setItem('kepos-login', 'logou')
-    navigate('/dashboard', { replace: true })
+    try {
+      const response = await api.post('/usuario/login', {
+        email: email,
+        senha: password
+      });
+      localStorage.setItem('kepos-login', response.data.token);
+      navigate('/dashboard', { replace: true });
+      console.log(response.data);
+    } catch (error) {
+      if (error.code === "ERR_NETWORK") {
+        toast.error("Tente novamente mais tarde");
+      } else {
+        toast.error("Email ou senha inválidos. Por favor, tente novamente");
+      }
+    }
   }
 
   return (
@@ -20,20 +39,30 @@ const SignInbox = () => {
       <div>
         <div className={styles.textLogin}>Fazer Login</div>
         <div className={styles.greenBox}>
-          <form onSubmit={(e) => handleSignIn(e)}>
+          <form onSubmit={handleSignIn}>
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
                 <InputText
+                required
                   type="text"
                   placeholder="E-mail / Usuário"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className={styles.boxItem}>
-                <InputText type="password" placeholder="Senha" id="senha" />
+                <InputText
+                required
+                  type="password"
+                  placeholder="Senha"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <div className={styles.boxItem}>
-                <Button>Entrar</Button>
+                <Button type="submit">Entrar</Button>
               </div>
               <div className={styles.boxItemLink}>
                 <CustomLink to="/">Esqueci minha senha</CustomLink>
@@ -43,8 +72,20 @@ const SignInbox = () => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
-  )
+  );
 }
 
-export default SignInbox
+export default SignInbox;
