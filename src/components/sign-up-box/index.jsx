@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../button'
@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {api} from '@libs/axios.js'
 
 const SignUpbox = () => {
+  const { saveToken } = useContext(authContext)
   const [nome,setNome] = useState("")
   const [email,setEmail] = useState("")
   const [password, setPassword] = useState('')
@@ -31,8 +32,9 @@ const SignUpbox = () => {
     navigate('/dashboard', { replace: true })
       console.log(response.data);
     } catch (error) {
+      console.error(error);
     }
-    console.error(error);
+    
   }
   const handleSubmit = async (e) => {
     e.preventDefault();

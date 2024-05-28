@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../button';
 import CustomLink from '../custom-link';
 import InputText from '../inputText';
 import styles from './styles.module.css';
 import { api } from '@libs/axios.js';
+import { authContext } from "@contexts/AuthContext.jsx";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Importa o CSS padrão do react-toastify
 
 const SignInbox = () => {
+  const { saveToken } = useContext(authContext)
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,10 +24,10 @@ const SignInbox = () => {
         email: email,
         senha: password
       });
-      localStorage.setItem('kepos-login', response.data.token);
+      saveToken(response.data.token);
       navigate('/dashboard', { replace: true });
-      console.log(response.data);
     } catch (error) {
+      console.log(data);
       if (error.code === "ERR_NETWORK") {
         toast.error("Tente novamente mais tarde");
       } else {
