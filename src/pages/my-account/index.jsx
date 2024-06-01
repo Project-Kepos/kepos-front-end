@@ -3,7 +3,7 @@ import { PiArrowLeft } from 'react-icons/pi'
 import { Link, useNavigate } from 'react-router-dom'
 import data from '../../../db.json'
 import styles from './styles.module.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useContext } from 'react'
 import { api } from '@libs/axios'
 import { MdCheck } from "react-icons/md";
 import { MdDone } from "react-icons/md";
@@ -26,11 +26,12 @@ const MyAccount = () => {
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await api.get('/users?id=1')
-          setUserData(response.data[0])
-          setUsername(response.data[0].name)
-          setEmail(response.data[0].email)
-          setPassword(response.data[0].password)
+          const response = await api.get('/usuario')
+          setUserData(response)
+          setUsername(response.data.nome)
+          setEmail(response.data.email)
+          setPassword(response.data.password)
+          console.log(response)
         }
         catch (e) {
           const dados=  {
@@ -43,7 +44,7 @@ const MyAccount = () => {
           setUsername(dados.name)
           setEmail(dados.email)
           setPassword(dados.password)
-          console.log(e)
+          
         }
       }
       fetchData(

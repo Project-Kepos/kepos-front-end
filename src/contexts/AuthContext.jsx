@@ -8,7 +8,6 @@ export const authContext = createContext({})
 export function AuthContextProvider({ children }) {
   const [token, setToken] = useState(null)
   const [authIsLoading, setAuthIsLoading] = useState(false)
-  const navigate = useNavigate()
 
   // Recuperando token do localstorage caso exista
   useEffect(() => {
@@ -41,7 +40,7 @@ export function AuthContextProvider({ children }) {
     localStorage.removeItem('kepos-login')
     setToken(null)
     api.defaults.headers.common.Authorization = null
-    navigate('/')
+    //navigate('/')
   }
 
   return (
