@@ -27,7 +27,6 @@ const SignInbox = () => {
       saveToken(response.data.token);
       navigate('/dashboard', { replace: true });
     } catch (error) {
-      console.log(data);
       if (error.code === "ERR_NETWORK") {
         toast.error("Tente novamente mais tarde");
       } else {
