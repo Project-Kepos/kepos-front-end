@@ -1,8 +1,10 @@
+import { AppError } from '@utils/AppError'
 import axios from 'axios'
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8081/api/v1',
 })
+
 api.registerInterceptTokenManager = (signOut) => {
   api.interceptors.response.use(
     (response) => response, // Nenhum erro na resposta, nada a ser feito,
@@ -11,7 +13,7 @@ api.registerInterceptTokenManager = (signOut) => {
       if (
         requestError.response?.status === 403 ||
         requestError.response?.data?.message ===
-          'Cliente não encontrado no sistema'
+          'Usuário não encontrado no sistema'
       ) {
         signOut()
         return Promise.reject(requestError)
