@@ -14,13 +14,13 @@ margin-bottom: 100px;
     color: var(--green-500);
     margin: 0 auto;    
 }
-.button{
-  margin-top: 20px;
-}
+
 .erroricon{
     font-size: 2rem;
 }
-
+.button{
+  margin-top: 20px;
+}
 .backicon{
     margin: 0 auto;
     display: block;

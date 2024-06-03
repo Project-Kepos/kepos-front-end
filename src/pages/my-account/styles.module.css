@@ -40,6 +40,7 @@ input {
     font-weight: 200;
     border: hidden;
     border-bottom: solid;
+    background-color: transparent;
 }
 .btnVoltar {
   color: var(--green-600);
