@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import AuthLayout from './layouts/auth-layout'
 import DefaultLayout from './layouts/default-layout'
+import Acessibilidade from './pages/acessibilidade'
 import AddGreenhouse from './pages/add-greenhouse'
 import Greenhouse from './pages/greenhouse'
 import Home from './pages/home'
@@ -10,7 +11,6 @@ import MyAccount from './pages/my-account'
 import SignIn from './pages/sign-in'
 import SignUp from './pages/sign-up'
 import Slot from './pages/slot'
-import Acessibilidade from './pages/acessibilidade'
 
 export const router = createBrowserRouter([
   // Rotas comuns (header e footer)
@@ -47,13 +47,12 @@ export const router = createBrowserRouter([
         // Dashboard do slot
         path: 'slot',
         element: <Slot />,
-      }, 
+      },
       {
         // Acessibilidade
         path: 'acessibilidade',
         element: <Acessibilidade />,
       },
-      
     ],
   },
 
@@ -84,7 +83,6 @@ export const router = createBrowserRouter([
         path: 'acessibilidade',
         element: <Acessibilidade />,
       },
-      
     ],
   },
 ])

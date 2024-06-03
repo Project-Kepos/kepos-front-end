@@ -23,4 +23,5 @@ api.registerInterceptTokenManager = (signOut) => {
         return Promise.reject(requestError)
       }
     },
-  )}
+  )
+}

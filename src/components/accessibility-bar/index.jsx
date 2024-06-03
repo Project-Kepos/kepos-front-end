@@ -1,7 +1,8 @@
 import 'react-toggle/style.css'
-import { Link } from 'react-router-dom'
+
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Toggle from 'react-toggle'
 
 import styles from './styles.module.css'
@@ -46,30 +47,26 @@ const AccessibilityBar = () => {
 
   return (
     <div className={styles.accessibilityBox}>
-      
       <Link className={styles.sobreacessibilidade} to="acessibilidade">
         Sobre acessibilidade
       </Link>
 
       <div className={styles.contrast}>
-        
-      <Toggle
+        <Toggle
           icons={false}
           className={`toogle ${styles.customToogle}`}
           checked={colorAccessibility}
           onChange={handleChangeColor}
         />
-       
+
         <div className={styles.contrastText}>Alto contraste</div>
-       
+
         <a className={styles.changeSizeText} onClick={decreaseFontSize}>
           A-
         </a>
         <a className={styles.changeSizeText} onClick={increaseFontSize}>
           A+
         </a>
-        
-
       </div>
     </div>
   )
