@@ -61,10 +61,10 @@ const MyAccount = () => {
 
       // mandando mudanças
       try {
-        await api.put("/users/1", {
+        await api.put("/usuario", {
           name: username,
-          email,
-          password
+          email:email,
+          password:password
         })
       } catch(e) {
         console.log(e)
@@ -116,7 +116,7 @@ const MyAccount = () => {
           </div>
         </Link>
         <Link  >
-        <div className={styles.oneOperation}  >
+        <div className={styles.oneOperation}  onClick={handleChangeData}>
           <MdDone size={46} />
           Salvar
         </div>
