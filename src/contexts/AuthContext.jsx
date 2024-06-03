@@ -1,7 +1,5 @@
-import { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import { api } from '@libs/axios.js'
+import { createContext, useEffect, useState } from 'react'
 
 export const authContext = createContext({})
 
@@ -40,7 +38,7 @@ export function AuthContextProvider({ children }) {
     localStorage.removeItem('kepos-login')
     setToken(null)
     api.defaults.headers.common.Authorization = null
-    //navigate('/')
+    // navigate('/')
   }
 
   return (

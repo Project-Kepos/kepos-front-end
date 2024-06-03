@@ -1,12 +1,27 @@
+import { useEffect, useState } from 'react'
 import { MdAutorenew, MdClose } from 'react-icons/md'
 import { Link, useNavigate } from 'react-router-dom'
 
 import AddDendro from '../../components/add-dendro-box'
 import DendroBox from '../../components/dendro-box'
+import { api } from '../../libs/axios'
 import styles from './styles.module.css'
 
 const Home = () => {
+  const [userDendros, setUserDendros] = useState([])
   const navigate = useNavigate()
+
+  useEffect(() => {
+    async function fetchDendros() {
+      try {
+        const { data } = await api.get('/dendro/usuario')
+        setUserDendros(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchDendros()
+  }, [])
 
   function handleLogout() {
     localStorage.clear('kepos-login')
@@ -17,12 +32,9 @@ const Home = () => {
     <main>
       <h2 className={styles.textMenu}>Estufas pareadas</h2>
       <div className={styles.menuContainer}>
-        <DendroBox dendroName="Déndro 01" />
-        <DendroBox dendroName="Déndro 02" />
-        <DendroBox dendroName="Déndro 03" />
-        <DendroBox dendroName="Déndro 03" />
-        <DendroBox dendroName="Déndro 04" />
-        <DendroBox dendroName="Déndro 05" />
+        {userDendros.map((dendro) => (
+          <DendroBox key={dendro.id} dendroName={dendro.name} id={dendro.id} />
+        ))}
         <AddDendro />
       </div>
       <div className={styles.operations}>

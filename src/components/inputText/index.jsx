@@ -9,5 +9,6 @@ const InputText = forwardRef((props, ref) => {
     </div>
   )
 })
+InputText.displayName = 'input'
 
 export default InputText

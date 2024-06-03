@@ -14,36 +14,14 @@ const weatherMap = {
 }
 
 const Greenhouse = () => {
-  const [greenHouseData, setGreenHouseData] = useState({
-    id: 1,
-    name: 'Dendro 1',
-    code: 'ABCD-EFGH-IJKL',
-    temperature: 25,
-    humidity: 89,
-    weather: 'sunny',
-    userId: 1,
-    modules: [
-      {
-        id: 1,
-        name: 'Salsa',
-        description: 'Lorem ipsum dolor sit amet consectetur.',
-        humidity: 89,
-      },
-      {
-        id: 2,
-        name: 'Manjericão',
-        description: 'Lorem ipsum dolor sit amet consectetur.',
-        humidity: 89,
-      },
-    ],
-  })
+  const [greenHouseData, setGreenHouseData] = useState({})
   const params = useParams()
 
   useEffect(() => {
     async function fetchGreenHouseData() {
       try {
-        const greenhouse = await api.get('/greenhouses/' + params.id)
-        const modules = await api.get('/modules?greenhouse=' + params.id)
+        const greenhouse = await api.get('/dendro/' + params.id)
+        const modules = await api.get('/modulo?dendro_id=' + params.id)
         setGreenHouseData({
           ...greenhouse.data,
           modules: [...modules.data],
@@ -60,7 +38,7 @@ const Greenhouse = () => {
       <header className={styles.heading}>
         <h1>{greenHouseData.name}</h1>
         <Link to="/dashboard">
-         <MdArrowBack size={48} />
+          <MdArrowBack size={48} />
           Voltar
         </Link>
       </header>
@@ -87,7 +65,7 @@ const Greenhouse = () => {
         <div className={`${styles.infoCard} ${styles.weather}`}>
           <h2>Clima</h2>
           <WiDaySunnyOvercast size={128} />
-          <strong>{weatherMap[greenHouseData.weather]}</strong>
+          <strong>{weatherMap[0]}</strong>
         </div>
       </section>
 
@@ -101,9 +79,9 @@ const Greenhouse = () => {
         </div>
 
         <div className={styles.modulesGrid}>
-          {greenHouseData.modules.map((module) => (
+          {greenHouseData.modules?.map((module) => (
             <Link
-              to="/dashboard/slot"
+              to={`/dashboard/slot/${module.id}`}
               key={module.id}
               className={styles.moduleItem}
             >
@@ -120,7 +98,7 @@ const Greenhouse = () => {
             </Link>
           ))}
 
-          {greenHouseData.modules.length < 4 &&
+          {greenHouseData.modules?.length < 4 &&
             Array.from(Array(4 - greenHouseData.modules.length).keys()).map(
               (_, index) => (
                 <Link

@@ -1,36 +1,37 @@
-import React, { useState,useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Button from '../button';
-import CustomLink from '../custom-link';
-import InputText from '../inputText';
-import styles from './styles.module.css';
-import { api } from '@libs/axios.js';
-import { authContext } from "@contexts/AuthContext.jsx";
+import 'react-toastify/dist/ReactToastify.css' // Importa o CSS padrão do react-toastify
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Importa o CSS padrão do react-toastify
+import { authContext } from '@contexts/AuthContext.jsx'
+import { api } from '@libs/axios.js'
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+
+import Button from '../button'
+import CustomLink from '../custom-link'
+import InputText from '../inputText'
+import styles from './styles.module.css'
 
 const SignInbox = () => {
   const { saveToken } = useContext(authContext)
-  const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   async function handleSignIn(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
       const response = await api.post('/usuario/login', {
-        email: email,
-        senha: password
-      });
-      saveToken(response.data.token);
-      navigate('/dashboard', { replace: true });
+        email,
+        senha: password,
+      })
+      saveToken(response.data.token)
+      navigate('/dashboard', { replace: true })
     } catch (error) {
-      if (error.code === "ERR_NETWORK") {
-        toast.error("Tente novamente mais tarde");
+      if (error.code === 'ERR_NETWORK') {
+        toast.error('Tente novamente mais tarde')
       } else {
-        toast.error("Email ou senha inválidos. Por favor, tente novamente");
+        toast.error('Email ou senha inválidos. Por favor, tente novamente')
       }
     }
   }
@@ -44,7 +45,7 @@ const SignInbox = () => {
             <div className={styles.intoBox}>
               <div className={styles.boxItem}>
                 <InputText
-                required
+                  required
                   type="text"
                   placeholder="E-mail / Usuário"
                   id="email"
@@ -54,7 +55,7 @@ const SignInbox = () => {
               </div>
               <div className={styles.boxItem}>
                 <InputText
-                required
+                  required
                   type="password"
                   placeholder="Senha"
                   id="password"
@@ -86,7 +87,7 @@ const SignInbox = () => {
         theme="light"
       />
     </div>
-  );
+  )
 }
 
-export default SignInbox;
+export default SignInbox
