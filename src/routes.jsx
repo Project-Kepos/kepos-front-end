@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
       },
       {
         // Dashboard do slot
-        path: 'slot',
+        path: 'slot/:id',
         element: <Slot />,
       },
       {
