@@ -5,8 +5,11 @@ import { FaUserTimes } from 'react-icons/fa'
 import { MdAccountCircle, MdDone } from 'react-icons/md'
 import { PiArrowLeft } from 'react-icons/pi'
 import { Link, useNavigate } from 'react-router-dom'
-
+import { AppError } from '@utils/AppError'
+import { toast, ToastContainer } from 'react-toastify'
 import styles from './styles.module.css'
+import Cookies from 'js-cookie'
+
 
 const MyAccount = () => {
   const { logout } = useContext(authContext)
@@ -25,43 +28,36 @@ const MyAccount = () => {
     async function fetchData() {
       try {
         const response = await api.get('/usuario')
-        setUserData(response)
         setUsername(response.data.nome)
         setEmail(response.data.email)
-        setPassword(response.data.password)
+        setPassword("")
         console.log(response)
       } catch (e) {
-        const dados = {
-          name: 'Fulano cinco',
-          email: 'fulano@gmail.com',
-          password: '12345678',
-          id: '1',
-        }
-        setUserData(dados)
-        setUsername(dados.name)
-        setEmail(dados.email)
-        setPassword(dados.password)
+        console.log(e)
       }
     }
     fetchData()
   }, [])
 
-  if (userData == null) {
-    return <p className={styles.center}>Carregando</p>
-  }
-
   async function handleChangeData(e) {
     e.preventDefault()
-
+    console.log(password)
       // mandando mudanças
       try {
         await api.put("/usuario", {
-          name: username,
+          nome: username,
           email:email,
-          password:password
+          senha:password
         })
-      } catch(e) {
-        console.log(e)
+        toast.success('Cadastro atualizado')
+      } catch (error) {
+        const isAppError = error instanceof AppError
+        const title = isAppError ? error.message : 'Erro no servidor.'
+        const description = isAppError
+          ? 'Verifique os dados e tente novamente.'
+          : 'Tente novamente mais tarde.'
+  
+        toast.error(title)
       }
 
     }
@@ -77,8 +73,7 @@ const MyAccount = () => {
           <PiArrowLeft size={40} />{' '}
           <div className={styles.textFormatation}>Voltar</div>
         </Link>
-        {/* <p className={styles.cardtext}>Nome atual: {userData.name}</p> */}
-        <form onSubmit={(e) => handleChangeData(e)}>
+        <form autoComplete={false} onSubmit={(e) => handleChangeData(e)}>
           <div>
             <label htmlFor="username">Nome</label>
             <br />
@@ -91,7 +86,6 @@ const MyAccount = () => {
               }}
             />
           </div>
-          {/* <p className={styles.cardtext}>E-mail atual: {userData.email}</p> */}
           <div>
             <label htmlFor="email">E-mail</label>
             <br />
@@ -104,7 +98,6 @@ const MyAccount = () => {
               }}
             />
           </div>
-          {/* <p className={styles.cardtext}>Senha: {data.users[0].password}</p> */}
           <div>
             <label htmlFor="password">Senha</label>
             <br />
@@ -134,6 +127,18 @@ const MyAccount = () => {
         </div>
         </Link>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme={Cookies.get('toggle')==='true'? "dark":"light"}
+      />
     </div>
   )
 }

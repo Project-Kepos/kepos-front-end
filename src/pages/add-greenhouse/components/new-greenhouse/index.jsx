@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
-const NewGreenhouse = ({ onSearchGreenhouse }) => {
+const NewGreenhouse = ({ onSearchGreenhouse, idDendro,setIdDendro }) => {
   return (
     <form className={styles.container} onSubmit={onSearchGreenhouse}>
       <div className={styles.title}>Adicionar estufa</div>
@@ -19,6 +19,9 @@ const NewGreenhouse = ({ onSearchGreenhouse }) => {
           type="text"
           className={styles.inputCode}
           placeholder="ABCD-EFGH-IJKL-LMNP"
+          maxLength={12}
+          value={idDendro}
+          onChange={e => setIdDendro(e.target.value)}
         />
       </div>
 

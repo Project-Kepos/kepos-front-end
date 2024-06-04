@@ -5,7 +5,7 @@ import { api } from '@libs/axios.js'
 import { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
-
+import { AppError } from '@utils/AppError'
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
@@ -49,7 +49,9 @@ const SignUpbox = () => {
       if (error.code === 'ERR_NETWORK') {
         toast.error('Tente novamente mais tarde')
       } else {
-        toast.error(error.response.data)
+        const isAppError = error instanceof AppError
+        const title = isAppError ? error.message : 'Erro no servidor.'
+        toast.error(title)
       }
     }
   }

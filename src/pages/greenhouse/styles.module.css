@@ -8,6 +8,46 @@
   flex-direction: column;
   gap: 2.5rem;
 }
+.modalContainer{
+  background-color: var(--gray-200);
+}
+.modalContainer h2{
+  margin-right: 35px;
+}
+
+.margin{
+  margin-bottom: 10px;
+}
+.modalContainer input{
+ width: 100%;
+}
+.modalContainer button{
+  float:right;
+  padding: 5px;
+  border-color: var(--green-500);
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: transparent;
+ }
+.description{
+  min-height:150px ;
+  width: 100%;
+  border:none;
+  border-bottom: 3px solid;
+  font-size: 1.5rem;
+  background-color: transparent;
+  font-weight: 300;
+}
+
+ .cancelButton{
+  border-color: var(--red) !important;
+  color:var(--red) ;
+ }
+
+
+ 
 
 .heading, .modulesHeading {
   display: flex;
@@ -164,7 +204,7 @@
 
 .moduleItem, .moduleEmptyItem {
   border: 1px solid currentColor;
-
+  background-color: transparent;
   display: flex;
   flex-direction: column;
 

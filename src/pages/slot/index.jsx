@@ -41,12 +41,12 @@ const Slot = () => {
           <div className={styles.plantHumidityIcon}>
             <TbDroplets />
           </div>
-          <div className={styles.plantHumidity}>{moduleData.humidity}/m³</div>
+          <div className={styles.plantHumidity}>{moduleData.humidity}%</div>
         </div>
       </div>
       <div className={styles.description}>
         <div className={styles.title}>Descrição</div>
-        <div>{moduleData.description}</div>
+        <div>{moduleData.desc}</div>
       </div>
     </>
   )

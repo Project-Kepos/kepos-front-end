@@ -15,7 +15,9 @@
         color: var(--green-500);
         margin: 0 auto; 
     }
-
+    .buttons{
+      margin-top: 20px;
+    }
     .erroricon{
         font-size: 2rem;
     }
