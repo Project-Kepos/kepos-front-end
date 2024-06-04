@@ -6,6 +6,9 @@
   width: 100%;
   font-size: 1.6rem;
 }
+.card form{
+  max-width: 450px;
+}
 
 .cardtext {
   color: var(--green-600);
@@ -39,6 +42,7 @@ input {
     margin-bottom: 10px;
     font-weight: 200;
     border: hidden;
+    width: 100%;
     border-bottom: solid;
     background-color: transparent;
 }
