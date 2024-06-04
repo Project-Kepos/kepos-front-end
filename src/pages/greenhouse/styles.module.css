@@ -31,6 +31,15 @@
   margin-left: 10px;
   background-color: transparent;
  }
+.description{
+  min-height:150px ;
+  width: 100%;
+  border:none;
+  border-bottom: 3px solid;
+  font-size: 1.5rem;
+  background-color: transparent;
+  font-weight: 300;
+}
 
  .cancelButton{
   border-color: var(--red) !important;
@@ -195,7 +204,7 @@
 
 .moduleItem, .moduleEmptyItem {
   border: 1px solid currentColor;
-
+  background-color: transparent;
   display: flex;
   flex-direction: column;
 
