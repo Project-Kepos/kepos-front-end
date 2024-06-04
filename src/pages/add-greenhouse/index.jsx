@@ -59,7 +59,7 @@ const AddGreenhouse = () => {
   return (
     <div className={styles.container}>
       {isSubmitting ? (
-        <SearchingGreenhouse />
+        <SearchingGreenhouse idDendro={idDendro} />
       ) : greenhouseWasFound ? (
         <GreenhouseFound />
       ) : errorWhileSearching ? (

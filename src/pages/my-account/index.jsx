@@ -47,7 +47,7 @@ const MyAccount = () => {
         await api.put("/usuario", {
           nome: username,
           email:email,
-          senha:password
+          senha:password || null
         })
         toast.success('Cadastro atualizado')
       } catch (error) {

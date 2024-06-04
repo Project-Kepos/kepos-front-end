@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
-const SearchingGreenhouse = () => {
+const SearchingGreenhouse = ({idDendro}) => {
   const [loadingStep, setLoadingStep] = useState(0)
   const navigate = useNavigate()
 
@@ -44,7 +44,7 @@ const SearchingGreenhouse = () => {
 
       <div className={styles.content}>
         <h1>Buscando Estufa</h1>
-        <p>ABCD-EFGH-IJKL</p>
+        <p>{idDendro}</p>
       </div>
     </section>
   )
