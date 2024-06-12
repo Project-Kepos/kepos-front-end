@@ -1,6 +1,6 @@
+import { FiAlertCircle } from 'react-icons/fi'
 import { MdArrowBack } from 'react-icons/md'
 import { Link } from 'react-router-dom'
-import { FiAlertCircle } from "react-icons/fi";
 
 import styles from './styles.module.css'
 
@@ -15,7 +15,6 @@ const GreenhouseAlreadyRegistered = () => {
           Voltar
         </Link>
       </div>
-      
     </div>
   )
 }

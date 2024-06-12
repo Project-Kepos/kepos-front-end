@@ -1,5 +1,8 @@
 .iconcard {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -7,7 +10,9 @@
   font-size: 1.6rem;
 }
 .card form{
+  width: 100%;
   max-width: 450px;
+  justify-self: center;
 }
 
 .cardtext {
@@ -18,9 +23,6 @@
 .container{
   margin-left: 15%;
   margin-right: 15%;
-}
-.accountIcon {
-  float: left;
 }
 
 .accountText {
@@ -50,17 +52,24 @@ input {
   color: var(--green-600);
   font-weight: 200;
   display: flex;
-  float: right;
-  margin-top: 13px;
+  justify-content: flex-end;
 }
 .operations{
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
 }
 
+.mainContent {
+  display: grid;
+  align-items: center;
+}
+
 .oneOperation{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   height: 90px;
   margin-right: 20px;
   width: 60px;

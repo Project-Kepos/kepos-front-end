@@ -1,20 +1,21 @@
-import { useEffect, useState} from 'react'
+import Cookies from 'js-cookie'
+import { useEffect, useState } from 'react'
 import { MdAutorenew, MdClose } from 'react-icons/md'
-import { Link, useNavigate,useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+
 import AddDendro from '../../components/add-dendro-box'
 import DendroBox from '../../components/dendro-box'
 import { api } from '../../libs/axios'
 import styles from './styles.module.css'
-import { toast, ToastContainer } from 'react-toastify'
-import Cookies from 'js-cookie'
 
 const Home = () => {
   const [userDendros, setUserDendros] = useState([])
   const navigate = useNavigate()
-  const location = useLocation();
+  const location = useLocation()
   useEffect(() => {
     if (location.state?.useToast) {
-      toast.success(location.state.toastMessage);
+      toast.success(location.state.toastMessage)
     }
     async function fetchDendros() {
       try {
@@ -63,9 +64,8 @@ const Home = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme={Cookies.get('toggle')==='true'? "dark":"light"}
+        theme={Cookies.get('toggle') === 'true' ? 'dark' : 'light'}
       />
-      
     </main>
   )
 }

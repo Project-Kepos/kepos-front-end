@@ -1,45 +1,45 @@
-import { useState } from 'react'
 import { api } from '@libs/axios.js'
+import { AppError } from '@utils/AppError'
+import { useState } from 'react'
+
 import GreenhouseAlreadyRegistered from './components/greenhouse-already-registered'
 import GreenhouseFound from './components/greenhouse-found'
 import GreenhouseNotFound from './components/greenhouse-not-found'
 import NewGreenhouse from './components/new-greenhouse'
 import SearchingGreenhouse from './components/searching-greenhouse'
 import styles from './styles.module.css'
-import { AppError } from '@utils/AppError'
 
 const AddGreenhouse = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [greenhouseWasFound, setGreenhouseWasFound] = useState(null)
-  const [greenhouseAlreadyRegistered, setGreenhouseAlreadyRegistered] = useState(null)
+  const [greenhouseAlreadyRegistered, setGreenhouseAlreadyRegistered] =
+    useState(null)
   const [errorWhileSearching, setErrorWhileSearching] = useState(null)
-  const [idDendro,setIdDendro]= useState('')
-   function handleSearchGreenhouse(e) {
+  const [idDendro, setIdDendro] = useState('')
+  function handleSearchGreenhouse(e) {
     e.preventDefault()
 
     setIsSubmitting(true)
-     setTimeout(async () => {
+    setTimeout(async () => {
       try {
         const response = await api.patch('/dendro/usuario', {
-          id:idDendro
+          id: idDendro,
         })
-        
+
         console.log(response.data)
         setIsSubmitting(false)
-          setGreenhouseWasFound(true)
+        setGreenhouseWasFound(true)
       } catch (error) {
         const isAppError = error instanceof AppError
         console.error(error)
-        if(isAppError){        
-        setGreenhouseAlreadyRegistered(true)
-        }
-        else{
-        setErrorWhileSearching(true)
+        if (isAppError) {
+          setGreenhouseAlreadyRegistered(true)
+        } else {
+          setErrorWhileSearching(true)
         }
         setIsSubmitting(false)
       }
-    }, 2000);
-    
+    }, 2000)
 
     /*
     new Promise((resolve, reject) => {
@@ -53,7 +53,7 @@ const AddGreenhouse = () => {
       .catch(() => {
         setIsSubmitting(false)
         setErrorWhileSearching(true)
-      })*/
+      }) */
   }
 
   return (
@@ -65,9 +65,13 @@ const AddGreenhouse = () => {
       ) : errorWhileSearching ? (
         <GreenhouseNotFound />
       ) : greenhouseAlreadyRegistered ? (
-        <GreenhouseAlreadyRegistered/>
-      ):(
-        <NewGreenhouse onSearchGreenhouse={handleSearchGreenhouse} idDendro={idDendro} setIdDendro={setIdDendro}/>
+        <GreenhouseAlreadyRegistered />
+      ) : (
+        <NewGreenhouse
+          onSearchGreenhouse={handleSearchGreenhouse}
+          idDendro={idDendro}
+          setIdDendro={setIdDendro}
+        />
       )}
     </div>
   )

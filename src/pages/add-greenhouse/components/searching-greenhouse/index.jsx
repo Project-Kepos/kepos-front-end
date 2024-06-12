@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
-const SearchingGreenhouse = ({idDendro}) => {
+const SearchingGreenhouse = ({ idDendro }) => {
   const [loadingStep, setLoadingStep] = useState(0)
   const navigate = useNavigate()
 

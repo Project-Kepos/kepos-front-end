@@ -1,11 +1,12 @@
 import 'react-toastify/dist/ReactToastify.css' // Importa o CSS padrão do react-toastify
 
-import { toast, ToastContainer } from 'react-toastify'
 import { authContext } from '@contexts/AuthContext.jsx'
 import { api } from '@libs/axios.js'
+import Cookies from 'js-cookie'
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie'
+import { toast, ToastContainer } from 'react-toastify'
+
 import Button from '../button'
 import CustomLink from '../custom-link'
 import InputText from '../inputText'
@@ -84,9 +85,8 @@ const SignInbox = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme={Cookies.get('toggle')==='true'? "dark":"light"}
+        theme={Cookies.get('toggle') === 'true' ? 'dark' : 'light'}
       />
-      
     </div>
   )
 }
