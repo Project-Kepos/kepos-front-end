@@ -2,7 +2,7 @@ import { AppError } from '@utils/AppError'
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://sv95h56n-8081.brs.devtunnels.ms/api/v1',
+  baseURL: import.meta.env.VITE_API_URL || 'https://02pjk39t-8081.brs.devtunnels.ms/api/v1',
 })
 
 api.registerInterceptTokenManager = (signOut) => {
