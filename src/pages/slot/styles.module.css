@@ -1,17 +1,82 @@
-��，SIM 卡將會被鎖定。</item>
-    </plurals>
-    <string name="imei" msgid="2157082351232630390">"IMEI"</string>
-    <string name="meid" msgid="3291227361605924674">"MEID"</string>
-    <string name="ClipMmi" msgid="4110549342447630629">"來電顯示"</string>
-    <string name="ClirMmi" msgid="6752346475055446417">"撥出時隱藏「來電顯示」資料"</string>
-    <string name="ColpMmi" msgid="4736462893284419302">"連接線識別功能"</string>
-    <string name="ColrMmi" msgid="5889782479745764278">"連接線識別限制"</string>
-    <string name="CfMmi" msgid="8390012691099787178">"來電轉駁"</string>
-    <string name="CwMmi" msgid="3164609577675404761">"來電等候"</string>
-    <string name="BaMmi" msgid="7205614070543372167">"通話限制"</string>
-    <string name="PwdMmi" msgid="3360991257288638281">"密碼更改"</string>
-    <string name="PinMmi" msgid="7133542099618330959">"更改 PIN"</string>
-    <string name="CnipMmi" msgid="4897531155968151160">"顯示來電號碼"</string>
-    <string name="CnirMmi" msgid="885292039284503036">"隱藏通話號碼"</string>
-    <string name="ThreeWCMmi" msgid="2436550866139999411">"三方通話"</string>
-    <string name="RuacMmi" msgid="18760473858489911
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-weight: 200;
+
+    font-size: 3em;
+}
+
+.back {
+    float: right;
+}
+.back:hover {
+    color: var( --transition-green-300);
+}
+
+
+.backText {
+    float: right;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.plant {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.firstInfos {
+    background-color: aqua;
+
+}
+
+.plantName {
+    float: left;
+}
+
+.plantHumidity {
+    float: right;
+}
+
+.plantHumidityIcon {
+    float: right;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 300;
+}
+
+.description {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    border-top: solid 1px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+@media screen and (max-width: 507px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 2.3em;
+        font-weight: 300;
+    }
+
+    .description {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .backText {
+        margin-top: 5px;
+    }
+}
