@@ -6,7 +6,7 @@ const Footer = ({ authenticated = false }) => {
       className={`${styles.footer} ${!authenticated && styles.unauthenticated}`}
     >
       <div style={!authenticated ? { justifyContent: 'center' } : null}>
-        <strong>Kêpos - 2024</strong>
+        <strong>Kêpos - 2025</strong>
         <p>Todos os direitos reservados</p>
       </div>
 
